@@ -1,0 +1,1321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
+   
+	<meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+	<meta property="og:title" content="Omar & Michella - Wedding">
+	<meta property="og:description" content="Join us in celebrating the wedding of Omar & Michella">
+	<meta property="og:image" content="https://omarandmichellawedding.netlify.app/img/MainImage.png">
+	<meta property="og:url" content="https://omarandmichellawedding.netlify.app/">
+	<meta property="og:type" content="website">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+    <title>Omar And Michella - Wedding</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans:wght@400;500;600&family=Petit+Formal+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+	
+
+  <style>
+	  @keyframes pulse {
+		  0%, 100% { opacity: 0.4; transform: scale(1); }
+		  50% { opacity: 1; transform: scale(1.2); }
+		}
+
+	.submit_rsvp {
+		width: 90%;
+		opacity: 0.7;
+		max-width: 280px;
+		border: 1px solid;
+		border-radius: 0;
+		height: 45px;
+		margin-top: 20px;
+		background: rgba(255, 255, 255, 0.2);
+		font-size: 20px;
+		cursor: pointer;
+		position: relative;
+	}
+
+     body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Georgia', serif;
+      background: white;
+      color: #333;
+      text-align: center;
+    }
+    .logo-section {
+      padding: 60px 20px 30px 20px;
+    }
+
+    .logo-section img {
+      width: 80px;
+      margin-bottom: 25px;
+    }
+
+    .verse {
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 1.6;
+      max-width: 500px;
+      margin: 0 auto;
+      color: #333;
+    }
+
+    .verse span.quote {
+      display: block;
+      font-size: 30px;
+      color: #000;
+      margin-bottom: 10px;
+    }
+
+    .verse span.ref {
+      display: block;
+      font-style: italic;
+      font-size: 14px;
+      color: #777;
+      margin-top: 10px;
+    }
+	
+	
+  
+  .full-width-section {
+ 
+	  width: 100vw;
+	  margin: 0;
+	  padding: 0;
+	  overflow: hidden;
+	  position: relative;
+	}
+
+	.full-width-section svg {
+	  width: 100vw;
+	  height: auto;
+	  display: block;
+	  margin: 0;
+	  padding: 0;
+	}
+
+	.full-width-section img {
+		width: 100vw;
+		height: 61vw;
+		display: block;
+		margin: 0;
+		padding: 0;
+		object-fit: cover;
+		clip-path: polygon(/* Torn TOP */ 0% -1%, -12% 0%, 5% 4%, 27% 1%, 32% 3%, 34% 3%, 27% 2%, 27% 1%, 38% 3%, 54% 3%, 39% 16%, 55% -14%, 69% 6%, 65% 1%, 70% -3%, 75% 2%, 88% 4%, 71% 6%, 90% 1%, 94% 2%, 101% -1%, /* Bottom right to left (torn BOTTOM) */ 100% 90%, 89% 87%, 116% 91%, 104% 78%, 111% 111%, 107% 88%, 75% 94%, 103% 91%, 65% 92%, 42% 94%, 61% 80%, 62% 91%, 57% 94%, -57% 89%, 41% 95%, 54% 94%, 30% 93%, 19% 93%, 27% 86%, 27% 86%, 37% 77%, 42% 95%, -28% 91%, 8% 93%, -5% 92%, 0% 95%);
+	}
+
+
+   .seal-icon img {
+      width: 70px;
+      margin-top: 40px;
+    }
+
+    /* Music toggle button */
+    #musicToggle {
+      position: fixed;
+      bottom: 0px;
+      left: -10px;
+      color: white;
+      font-size: 20px;
+      padding: 10px 12px;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 9999;
+      transition: background 0.3s;
+    }
+
+  
+	
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html, body {
+      height: 100%;
+      overflow: hidden;
+      font-family: 'Georgia', serif;
+    }
+		
+	#container {
+	  width: 100%;
+	  height: 100vh;
+	  overflow-y: hidden; /* 👈 disable scroll at first */
+	  scroll-behavior: smooth;
+	}
+
+    section {
+		background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.05))
+	  background-color: white;
+	  height: 100vh;
+	  scroll-snap-align: start;
+	  display: flex;
+	  justify-content: flex-start;
+	  align-items: center;
+	  flex-direction: column;
+	  padding: 2px 20px;
+    }
+
+    .section-title {
+	  background-color: white;
+      font-size: 30px;
+      font-weight: bold;
+      margin-bottom: 15px;
+      font-family: 'Georgia', serif;
+      letter-spacing: 1px;
+    }
+
+    /* Page 1 */
+	
+
+<!--
+    .page1 {
+      background: url('img/MainImage.png') no-repeat center center;
+      background-size: cover;
+      color: white;
+	  width:100%;
+	  height:100%;
+      text-align: center;
+    }-->
+
+    .polaroid {
+	  margin-top: 50px;
+      background: #f4f2ec;
+      padding: 12px;
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      width: 300px;
+    }
+
+    .polaroid img {
+      width: 70%;
+      border-radius: 4px;
+    }
+
+    .polaroid-text {
+      margin-top: 10px;
+      color: #222;
+    }
+
+    .title { font-weight: bold; font-size: 13px; }
+    .subtitle { font-style: italic; font-size: 12px; margin-top: 3px; }
+    .names {
+      font-size: 22px;
+      margin-top: 4px;
+    }
+
+    .countdown-title {
+      font-family: 'Great Vibes', cursive;
+      font-size: 35px;
+      margin-top: 0px;
+	  color:white;
+    }
+
+    .date-text {
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 8px;
+	   color:white;
+    }
+
+    .countdown {
+      font-size: 26px;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    .countdown-label {
+      font-size: 13px;
+      font-weight: normal;
+      letter-spacing: 1px;
+      margin-top: 4px;
+    }
+
+    /* Page 2 */
+    .page2 {
+      background-color: white;
+      color: #9B7F64;
+      text-align: center;
+    }
+
+    .calendar-month {
+      font-family: 'Great Vibes', cursive;
+      font-size: 50px;
+      margin-bottom: -10px;
+    }
+
+    .calendar-details {
+      font-size: 14px;
+      color: #444;
+      line-height: 1.4;
+	  margin-left: 20px;
+      font-style: italic;
+    }
+
+    .calendar-grid {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 5px;
+      max-width: 320px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .calendar-cell {
+      width: 25px;
+      height: 25px;
+      background: #f6eaea;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 15px;
+      color: #333;
+      border-radius: 4px;
+	  opacity: 0.7;
+    }
+
+    .calendar-cell.empty {
+      background: transparent;
+    }
+
+    .calendar-cell.wedding {
+      border: 2px solid #9B7F64;
+      border-radius: 50%;
+      font-weight: bold;
+      color: #9B7F64;
+    }
+
+    /* Page 3 */
+    .page3 {
+      background-color: white;
+      color: #111;
+      text-align: center;
+    }
+
+    .wedding-text .top-text {
+      font-size: 25px;
+      line-height: 1.5;
+      font-weight: 300;
+    }
+
+    .wedding-text .italic {
+      font-style: italic;
+      color: #9B7F64;
+      font-size: 40px;
+    }
+
+    .main-countdown {
+      font-size: 36px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      margin-top: 20px;
+    }
+
+	.labels {
+		display: flex;
+		justify-content: center;
+		gap: 5px;
+		font-size: -17px;
+		margin-top: -6px;
+		text-transform: uppercase;
+		color: #333;
+	}
+
+    .seal-icon img {
+      width: 70px;
+      margin-top: 40px;
+    }
+
+    .details-text {
+      font-size: 18px;
+      letter-spacing: 2px;
+      margin-top: 8px;
+    }
+
+  
+
+    .page4-content {
+      max-width: 600px;
+	  margin-bottom: 100%;
+      
+    }
+
+    .page4-section {
+      margin-bottom: -70px;
+	  padding-top: 50px
+    }
+
+    .page4-section h3 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 40px;
+      color: #9B7F64;
+      margin-bottom: 30px;
+    }
+
+    .page4-section p {
+      font-size: 16px;
+      color: #333;
+      line-height: 1.5;
+      margin: 0 auto;
+      max-width: 400px;
+    }
+
+   .page4-footer {
+		margin-bottom: 30px;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-evenly;
+	}
+    /* Page 5 */
+    .page5 {
+      background-color: white;
+      justify-content: center;
+	  padding-top: 50px;
+    }
+
+   
+
+    .rsvp-note {
+      font-family: 'Great Vibes', cursive;
+      font-size: 24px;
+      margin-top: 10px;
+	  color:#9B7F64;
+    }
+
+	
+	.rsvp-envelope {
+		color: #9B7F64;
+    }
+
+    .rsvp-text {
+      font-size: 40px;
+      color: 9B7F64;
+	  opacity: 0.7;
+      font-family:  'Great Vibes', cursive;
+      letter-spacing: 2px;
+    }
+
+    .rsvp-deadline {
+      font-size: 15px;
+      padding: 3px 10px;
+	  opacity: 0.7;
+	  color: black;
+	  font-family: cursive;
+    }
+
+    .rsvp-instruction {
+      font-size: 14px;
+      color: #555;
+      margin-top: 20px;
+      line-height: 1.6;
+    }
+
+    .rsvp-love {
+      font-family: 'Great Vibes', cursive;
+      font-size: 24px;
+      color: #9B7F64;
+      margin-top: 10px;
+    }
+
+    .rsvp-photo {
+      margin-top: 20px;
+      position: relative;
+    }
+
+    .rsvp-photo img {
+      width: 140px;
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    /* Page 6 */
+    .page6 {
+      background-color: white;
+      justify-content: flex-start;
+      color: #9B7F64;
+      text-align: center;
+    }
+
+
+    .required {
+      color: #9B7F64;
+    }
+
+	
+
+    .option {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 36px;
+      padding: 10px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      color: #ccc;
+      user-select: none;
+    }
+
+    .option.selected {
+      color: #9B7F64;
+      font-weight: bold;
+      background-color: #f4e0e0;
+    }
+
+      .rsvp-options {
+		display: flex;
+		gap: 20px;
+		justify-content: center;
+		margin-top: 20px;
+	  }
+
+	  .rsvp-options .option {
+		cursor: pointer;
+		font-size: 32px;
+		color: #9B7F64; /* Beige color */
+		text-align: center;
+	  }
+
+	  .option-text {
+		font-size: 16px;
+		margin-top: 5px;
+	  }
+    .rsvp-form {
+      width: 100%;
+      max-width: 360px;
+    }
+
+    .rsvp-card {
+      padding: 20px;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .rsvp-card label {
+      font-size: 15px;
+      font-weight: 600;
+      color: #333;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .required { color: #9B7F64; }
+
+    .rsvp-options {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .option {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 36px;
+      padding: 10px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      color: #ccc;
+      user-select: none;
+    }
+
+    .option.selected {
+      color: #9B7F64;
+      font-weight: bold;
+      background-color: #f4e0e0;
+    }
+
+    .option-text {
+      margin-top: 6px;
+      font-size: 13px;
+      color: #444;
+      text-align: center;
+    }
+
+    .rsvp-card input[type="text"],
+    .rsvp-card textarea {
+      width: 100%;
+      padding: 10px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .guest-options label {
+      font-size: 14px;
+      display: block;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .other-option {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .other-option .other-text {
+      margin-top: 6px;
+      padding: 8px;
+      font-size: 13px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+	
+	.page3 {
+	  display: flex;
+	  flex-direction: column;
+	  justify-content: space-between;
+	  padding: 20px 20px;
+	}
+
+	.page3-footer {
+	  margin-bottom: 30px;
+	  display: flex;
+	  flex-direction: column;
+	  align-items: center;
+	}
+	
+	.page4 {
+	  background-color: white;
+	  display: flex;
+	  flex-direction: column;
+	  justify-content: space-between;
+	  padding: 20px 20px;
+	}
+
+	
+	.seal-icon-row {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-top: 30px;
+		padding: 0 100px;
+		flex-direction: row-reverse;
+		flex-wrap: nowrap;
+	}
+
+	.left-seal img,
+	.right-seal img {
+		display:none;
+		width: 80px!important;
+	}
+
+	.page4-image-wrapper {
+	  width: 100%;
+	  height: 75%;
+	  overflow: hidden;
+	  position: relative;
+	  margin-bottom: 20px;
+	}
+
+	.page4-image {
+	  width: 100%;
+	  border-bottom-left-radius: 100% 30px;
+	  border-bottom-right-radius: 100% 30px;
+	}
+	.wave {
+	  position: absolute;
+	  width: 100%;
+	  height: auto;
+	  left: 0;
+	  z-index: 1;
+	  pointer-events: none;
+	}
+
+	.wave-top {
+	  top: 0;
+	  transform: translateY(-100%);
+	}
+
+	.wave-bottom {
+	  bottom: 0;
+	  transform: translateY(100%);
+	}
+	
+	
+	
+	
+	.back {
+	  position: fixed;
+	  padding: 0;
+	  margin: 0;
+	  top: 0;
+	  left: 0;
+	  width: 100%;
+	  height: 100%;
+	  background: white;
+	  animation-name: backdiv;
+	  animation-duration: 1s;
+	  animation-iteration-count:infinite;
+  
+  
+	}
+	
+	
+	
+    .logo {
+      font-family: 'Georgia', serif;
+      font-size: 70px;
+      font-weight: normal;
+      color: #9B7F64;
+      letter-spacing: -25px;
+      line-height: 2;
+      position: relative;
+    }
+
+    .logo span:first-child {
+      font-size: 70px;
+    }
+
+    .logo::before {
+      content: "";
+      position: absolute;
+      bottom: 10px;
+      left: -25px;
+      width: 100px;
+      height: 40px;
+      border-bottom: 2px solid #000;
+      border-radius: 0 50% 50% 0;
+      transform: rotate(-15deg);
+      opacity: 0.3;
+    }
+
+    .logo::after {
+      content: "";
+      position: absolute;
+      bottom: 5px;
+      right: -30px;
+      width: 80px;
+      height: 30px;
+      border-bottom: 2px solid #000;
+      border-radius: 50% 0 0 50%;
+      transform: rotate(15deg);
+      opacity: 0.3;
+    }
+	
+	.detail-span{
+		padding: 40px;
+	}
+ 
+  </style>
+</head>
+<body>
+<!--
+	<div id="splash" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+	  background: white; display: flex; align-items: center; justify-content: center; z-index: 10000;">
+	  <dotlottie-wc 
+		src="https://lottie.host/00cf3f21-f9a1-42d4-9a1c-5aa54bc064da/2Q5cpy0Olq.lottie"
+		style="width: 100px; height: 100px"
+		speed="1" autoplay loop>
+	  </dotlottie-wc>
+	</div>
+-->
+
+	<div id="splash" style="
+	  position: fixed;
+	  top: 0;
+	  left: 0;
+	  width: 100vw;
+	  height: 100vh;
+	  background: white;
+	  display: flex;
+	  flex-direction: column;
+	  justify-content: center;
+	  align-items: center;
+	  z-index: 9999;
+	  font-family: 'Georgia', serif;
+	">
+	  <!-- Animated squares -->
+	  <div style="
+		display: grid;
+		grid-template-columns: repeat(3, 10px);
+		grid-gap: 4px;
+		animation: pulse 1.2s infinite;
+	  ">
+		<div style="width:10px;height:10px;background:#aaa;"></div>
+		<div style="width:10px;height:10px;background:#aaa;"></div>
+		<div style="width:10px;height:10px;background:#aaa;"></div>
+		<div style="width:10px;height:10px;background:#aaa;"></div>
+		<div style="width:10px;height:10px;background:#aaa;"></div>
+		<div style="width:10px;height:10px;background:#aaa;"></div>
+		<div style="width:10px;height:10px;background:#aaa;"></div>
+		<div style="width:10px;height:10px;background:#aaa;"></div>
+		<div style="width:10px;height:10px;background:#aaa;"></div>
+	  </div>
+
+  <!-- Text -->
+  <div style="margin-top: 16px; font-size: 18px; color: #333; text-transform: uppercase;">
+    Loading..
+  </div>
+</div>
+
+  <div id="container">
+
+    <!-- Page 1 
+    <section class="page1">
+      <div class="polaroid">
+        <img src="img/MainImage.png" alt="Omar and Michella">
+        <div class="polaroid-text">
+          <div class="title">YOU'RE CORDIALLY INVITED</div>
+          <div class="subtitle">to celebrate the joyous union</div>
+          <div class="names">Omar and Michella</div>
+        </div>
+      </div>
+      <div class="countdown-title">Countdown to our big day</div>
+      <div class="date-text">DECEMBER 27, 2025</div>
+		<div style="margin-top: 40px;">
+		  <button onclick="startInvite()" style="padding: 12px 24px; font-size: 16px; border: 1px solid white; background: transparent; color: white; border-radius: 8px; cursor: pointer;">Tap to start</button>
+		</div>
+    </section> 
+	 background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.05))
+	 -->
+	
+<section class="page1" style="background: 
+  linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.05)),
+  url('img/MainImage.png') no-repeat center center;
+background-size: cover; height: 100vh; position: relative; font-family: Georgia, serif; color: white; overflow: hidden;">
+  <div class="overlay" style="height: 85%; width: 100%; display: flex; flex-direction: column; justify-content: space-between; padding: 40px 20px;">
+    
+    <!-- HEADER -->
+    <div class="header-content" style="text-align: center;">
+      <div class="names" style="font-size: 24px; text-transform: uppercase; font-weight: bold; letter-spacing: 1px;margin-top:5%; margin-bottom: 4px;">Michella & Omar</div>
+      <div class="wedding-date" style="font-size: 16px; opacity: 0.9;">27 . 12 . 2025</div>
+    </div>
+
+    <!-- FOOTER -->
+    <div style="text-align: center">
+      <button onclick="startInvite()" style="
+          background-color: rgba(0, 0, 0, 0.25);
+          font-size: 15px;
+          border: 1px solid;
+          width: 50%;
+          height: 44px;
+          border-radius: 0;
+          padding: 0;
+          margin: 0 auto;
+          cursor: pointer;
+          color: white;
+        ">TAP TO START</button>
+    </div>
+
+  </div>
+</section>
+
+
+
+	<hr>
+	<section class="page2">
+	
+		<div class="full-width-section">
+		  <svg viewBox="0 0 1440 320" class="wave wave-top">
+			<path fill="white" d="M0,64L48,74.7C96,85,192,107,288,117.3C384,128,480,128,576,112C672,96,768,64,864,64C960,64,1056,96,1152,117.3C1248,139,1344,149,1392,154.7L1440,160L1440,0L0,0Z"></path>
+		  </svg>
+
+			<div class="full-width-section" 
+				 style="position: relative;
+						background: url(img/hands.png) no-repeat top center fixed;
+						-webkit-background-size:  80% auto;;
+						-moz-background-size:  80% auto;;
+						background-size: cover;
+						text-align: center;
+						color: #fff;
+						padding-top: 110px;
+						min-height: 550px;
+						letter-spacing: 2px;
+						font-family: 'Montserrat', sans-serif;
+						object-fit: cover;
+						clip-path: polygon(
+						  0% 0%, 100% 0%,
+						  100% 90%, 89% 87%, 116% 91%, 104% 78%, 111% 111%, 107% 88%,
+						  75% 94%, 103% 91%, 65% 92%, 42% 94%, 61% 80%, 62% 91%, 57% 94%,
+						  -57% 89%, 41% 95%, 54% 94%, 30% 93%, 19% 93%, 27% 86%, 27% 86%,
+						  37% 77%, 42% 95%, -28% 91%, 8% 93%, -5% 92%, 0% 95%
+						);">
+
+			</div>
+
+
+		  <svg viewBox="0 0 1440 320" class="wave wave-bottom">
+			<path fill="white" d="M0,160L48,138.7C96,117,192,75,288,80C384,85,480,139,576,154.7C672,171,768,149,864,144C960,139,1056,149,1152,149.3C1248,149,1344,139,1392,133.3L1440,128L1440,320L0,320Z"></path>
+		  </svg>
+		</div>
+		 <div class="logo">
+			<span>O</span>M 
+		  </div>
+	</section>
+    <hr>
+    <section class="page3">
+		<div style="align-items: center; height: 100vh;">
+			<div class="section-title" style="font-size:15px; text-align: center;opacity:0.7">
+				
+				Above all, love each other deeply,<br> 
+				because love covers over a<br> 
+				multitude of sins
+				<br>
+				<span style="font-size:12px;font-style:italic;opacity:0.5">Peter 4:8</span><br><br>
+				<span style="font-size:28px">&ldquo;</span><br>
+				<span style="font-size:15px;opacity:0.5">WITH JOYOUS HEARTS,</span><br><br>
+				<span style="font-size:20px;margin:1">Khoury & Assaf FAMILIES</span> <br><br>
+				<span style="font-size:15px;margin:1;opacity:0.7">REQUEST THE HONOR OF YOUR<br> PRESENCE AT THE WEDDING OF<br> THEIR SON AND DAUGHTER</span> <br><br>
+				<span style="font-family: 'Great Vibes', cursive;opacity:1;color:#9B7F64;font-size:40px">Omar & Michella</span> <br><br>
+			</div>
+			<div>
+			  <div style="font-size:15px;opacity:0.7">Saturday, December 27, 2025</div>
+			</div>
+			
+			<div class="calendar-grid">
+				<!-- Only 27 is highlighted &rdquo;<br> -->
+				<div class="calendar-cell empty"></div><div class="calendar-cell empty"></div><div class="calendar-cell">1</div><div class="calendar-cell">2</div><div class="calendar-cell">3</div><div class="calendar-cell">4</div><div class="calendar-cell">5</div>
+				<div class="calendar-cell">6</div><div class="calendar-cell">7</div><div class="calendar-cell">8</div><div class="calendar-cell">9</div><div class="calendar-cell">10</div><div class="calendar-cell">11</div><div class="calendar-cell">12</div>
+				<div class="calendar-cell">13</div><div class="calendar-cell">14</div><div class="calendar-cell">15</div><div class="calendar-cell">16</div><div class="calendar-cell">17</div><div class="calendar-cell">18</div><div class="calendar-cell">19</div>
+				<div class="calendar-cell">20</div><div class="calendar-cell">21</div><div class="calendar-cell">22</div><div class="calendar-cell">23</div><div class="calendar-cell">24</div><div class="calendar-cell">25</div><div class="calendar-cell">26</div>
+				<div class="calendar-cell wedding">27</div><div class="calendar-cell">28</div><div class="calendar-cell">29</div><div class="calendar-cell">30</div>
+			</div>
+		</div>
+    </section>
+	<hr>
+    <section class="page4">
+		<div class="full-width-section">
+		  <svg viewBox="0 0 1440 320" class="wave wave-top">
+			<path fill="white" d="M0,64L48,74.7C96,85,192,107,288,117.3C384,128,480,128,576,112C672,96,768,64,864,64C960,64,1056,96,1152,117.3C1248,139,1344,149,1392,154.7L1440,160L1440,0L0,0Z"></path>
+		  </svg>
+
+		  <img src="img/rings.jpg" alt="Couple" class="main">
+		  <svg viewBox="0 0 1440 320" class="wave wave-bottom">
+			<path fill="white" d="M0,160L48,138.7C96,117,192,75,288,80C384,85,480,139,576,154.7C672,171,768,149,864,144C960,139,1056,149,1152,149.3C1248,149,1344,139,1392,133.3L1440,128L1440,320L0,320Z"></path>
+		  </svg>
+		</div>
+		
+      <div class="wedding-text" style="display:none">
+        <div class="top-text">Time left until<span class="italic"><br />  the</span> wedding</div>
+      </div>
+	  <div class="countdown-title" style="display:none">Countdown to our big day</div>
+      <div id="mainCountdown" class="main-countdown">Loading...</div>
+      <div class="labels">
+        <span>Days</span><span>Hours</span><span>Minutes</span><span>Seconds</span>
+      </div>
+	 		<div class="detail-span">
+			<span style="font-size:30px;font-style:italic;font-family:'Brush Script MT', cursive; display:none">DETAILS</span>
+		 </div>
+    
+		<div class="full-width-section">
+			
+		  <svg viewBox="0 0 1440 320" class="wave wave-top">
+			<path fill="white" d="M0,64L48,74.7C96,85,192,107,288,117.3C384,128,480,128,576,112C672,96,768,64,864,64C960,64,1056,96,1152,117.3C1248,139,1344,149,1392,154.7L1440,160L1440,0L0,0Z"></path>
+		  </svg>
+
+		  <img src="img/ImageRSVP.png" alt="Couple" class="main">
+		  <svg viewBox="0 0 1440 320" class="wave wave-bottom">
+			<path fill="white" d="M0,160L48,138.7C96,117,192,75,288,80C384,85,480,139,576,154.7C672,171,768,149,864,144C960,139,1056,149,1152,149.3C1248,149,1344,139,1392,133.3L1440,128L1440,320L0,320Z"></path>
+		  </svg>
+		</div>
+		
+    </section>
+    <hr>
+    <section class="page5">
+		<div class="page4-content">
+			<div class="page4-section">
+			  <h3>Wedding Ceremony</h3>
+				<i style='font-size:40px;color:#BAB0A7;padding-bottom: 10px' class='far'>&#xf017;</i>
+				<p style="font-size:18px!important;margin: 0; padding-left: 10px;">
+					<b> 6:00 PM </b> <br><span  style="font-size:15px;opacity:0.7">Beirut Time</span>
+				</p><br><br><br>
+				<i style='font-size:45px;color:#BAB0A7' class='fas'>&#xf3c5;</i>
+				 <p style="font-size:18px!important;margin: 0; padding-left: 10px;">
+					<b>Saydet El Nourieh Monastery<br>دير سيدة النورية</b><br><span  style="font-size:15px;opacity:0.7">North Lebanon</span>
+				</p>
+				
+				<button 
+				   onclick="window.open('https://maps.app.goo.gl/AVRzXo2U1XasYzBt9', '_blank')"
+				  class="submit_rsvp" style="opacity: 0.5">
+				   View Location
+				</button>
+				
+			</div>
+		</div>  
+    </section>
+	<hr>
+    <section class="page5">
+		<div class="page4-content">
+			<div class="full-width-section">
+			
+				  <svg viewBox="0 0 1440 320" class="wave wave-top">
+					<path fill="white" d="M0,64L48,74.7C96,85,192,107,288,117.3C384,128,480,128,576,112C672,96,768,64,864,64C960,64,1056,96,1152,117.3C1248,139,1344,149,1392,154.7L1440,160L1440,0L0,0Z"></path>
+				  </svg>
+
+				  <img src="img/ImageRSVP.png" alt="Couple" class="main">
+				  <svg viewBox="0 0 1440 320" class="wave wave-bottom">
+					<path fill="white" d="M0,160L48,138.7C96,117,192,75,288,80C384,85,480,139,576,154.7C672,171,768,149,864,144C960,139,1056,149,1152,149.3C1248,149,1344,139,1392,133.3L1440,128L1440,320L0,320Z"></path>
+				  </svg>
+				</div>
+			<div class="page4-section">
+			   <h3>Wedding Reception</h3>
+				<i style='font-size:40px;color:#BAB0A7;padding-bottom: 10px' class='far'>&#xf017;</i>
+				<p style="font-size:18px!important;margin: 0; padding-left: 10px;">
+					<b> 7:30 PM </b> <br><span  style="font-size:15px;opacity:0.7">Beirut Time</span>
+				</p><br><br><br>
+				<i style='font-size:45px;color:#BAB0A7' class='fas'>&#xf3c5;</i>
+				 <p style="font-size:18px!important;margin: 0; padding-left: 10px;">
+					<b>Batrouniyat</b><br><span  style="font-size:15px;opacity:0.7">North Lebanon</span>
+				</p>
+				 <button 
+				  onclick="window.open('https://maps.app.goo.gl/yAX5tFdc4FBPkbGu5', '_blank')" 
+				  class="submit_rsvp"  style="opacity: 0.5">
+				   View Location
+				</button>
+			</div>
+		</div>
+
+	</section>
+    <hr>
+    <section class="page6">
+		
+		<div class="full-width-section" style="margin-bottom:20px!important;height:75vw!important">
+		  <svg viewBox="0 0 1440 320" class="wave wave-top">
+			<path fill="white" d="M0,64L48,74.7C96,85,192,107,288,117.3C384,128,480,128,576,112C672,96,768,64,864,64C960,64,1056,96,1152,117.3C1248,139,1344,149,1392,154.7L1440,160L1440,0L0,0Z"></path>
+		  </svg>
+
+			<img src="img/ImageRSVP.png" alt="Couple" class="main">
+
+		  <svg viewBox="0 0 1440 320" class="wave wave-bottom">
+			<path fill="white" d="M0,160L48,138.7C96,117,192,75,288,80C384,85,480,139,576,154.7C672,171,768,149,864,144C960,139,1056,149,1152,149.3C1248,149,1344,139,1392,133.3L1440,128L1440,320L0,320Z"></path>
+		  </svg>
+		</div>
+	  <span style="font-size:40px;font-family:'Great Vibes', cursive;color:#9B7F64">Gift Registry</span><br>
+	  <span style="font-size:18px;color:black;opacity:0.5">YOUR LOVE, LAUGHTER AND<br>PRESENCE ARE ALL WE COULD<br>WICH FOR ON OUR SPECIAL DAY.
+	  <br><br>FOR THOSE WHO WISH, A <br> WEDDING REGISTRY IS AVAILABLE AT <br><br> </span><span style="font-size:18px;color:black;opacity:1!important"><b>OMT</b> <br><br> <b>Acc#</b> 448425</span><br>
+
+
+    </section>
+	<hr>
+	<section class="page8">
+	
+	  <div class="rsvp-form">
+		<div class="rsvp-card">
+		  <div style="font-family: 'Great Vibes', cursive; font-size: 40px; color: #9B7F64; text-align: center;margin-bottom:15px">
+			Be Our Guest
+		  </div>
+		  <div style="text-align: center; font-size: 14px; margin-top: 8px; color: black;">
+			Please reply before <strong>December 05, 2025</strong><br>
+			<em>Number of persons: <span id="np" style="font-size:20px"> No Number</span></em>
+		  </div>
+		  <div style="text-align: center; font-style: italic; font-size: 16px; margin-top: 12px;">
+			<strong><span style="color:black;opacity:0.7;font-size:20px" id="gn">No Name</span></strong>
+		  </div>
+		  <br>
+
+		  <!-- Attendance dropdown -->
+		  <label for="attendance" style="font-size: 14px;">Are You Attending?</label>
+		  <select id="attendance" name="attendance" onchange="toggleAttendeeDropdown()" style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #ccc; margin-top: 5px;">
+			<option value="">-- SELECT --</option>
+			<option value="yes">Yes Attending</option>
+			<option value="no">Not Attending</option>
+		  </select>
+
+		  <!-- Number of attendees -->
+			<div id="attendeeWrapper" style="margin-top: 15px; display: none;">
+			  <label for="numAttendees" style="font-size: 14px;">Number of Attendees</label>
+			  <select id="numAttendees" name="numAttendees" onchange="handleSingleSelection()" style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #ccc; margin-top: 5px;">
+				<option value="">- SELECT -</option>
+				<option value="1">1</option>
+				<option value="2">2</option>
+			  </select>
+
+			  <!-- Dropdown for choosing specific person when only 1 attendee -->
+			  <div id="whoIsComingWrapper" style="margin-top: 15px; display: none;">
+				<label for="whoIsComing" style="font-size: 14px;">Who is Attending?</label>
+				<select id="whoIsComing" name="whoIsComing" style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #ccc; margin-top: 5px;">
+				  <option value="">- SELECT PERSON -</option>
+				  <option value="Georges">Georges</option>
+				  <option value="Lina">Lina</option>
+				</select>
+				</div>
+			</div>
+		  <div style="text-align:center; margin-top: 20px;">
+			<button class="submit_rsvp" onclick="submitRSVP()">RSVP</button>
+		  </div>
+		</div>
+	  </div>
+	</section>
+
+
+
+  </div>
+ <audio id="bgMusic" autoplay loop>
+    <source src="music/Sia - Snowman.mp3" type="audio/mpeg" />
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Music Toggle Button -->
+  <div id="musicToggle" onclick="toggleMusic()" title="Toggle music">🔊</div>
+
+<!-- Inside your <body>, at the end before </body> -->
+<script>
+
+
+ let selectedOption = null;
+  function selectOption(choice) {
+    const accept = document.getElementById("acceptOption");
+    const decline = document.getElementById("declineOption");
+    if (choice === "accept") {
+      accept.classList.add("selected");
+      decline.classList.remove("selected");
+      selectedOption = "Accept";
+    } else {
+      decline.classList.add("selected");
+      accept.classList.remove("selected");
+      selectedOption = "Decline";
+    }
+  }
+
+function startInvite() {
+  const container = document.getElementById('container');
+  const music = document.getElementById('bgMusic');
+  const toggle = document.getElementById('musicToggle');
+
+  // Enable scroll
+  container.style.overflowY = 'scroll';
+
+  // Scroll to next section
+  container.scrollTo({
+    top: window.innerHeight,
+    behavior: 'smooth'
+  });
+
+  // Try to start the music
+  music.play().then(() => {
+    isPlaying = true;
+    toggle.innerHTML = "🔊";
+  }).catch(() => {
+    isPlaying = false;
+    toggle.innerHTML = "🔇";
+  });
+}
+
+
+    let isPlaying = true;
+
+    function toggleMusic() {
+      const music = document.getElementById('bgMusic');
+      const toggle = document.getElementById('musicToggle');
+      if (isPlaying) {
+        music.pause();
+        toggle.innerHTML = "🔇";
+      } else {
+        music.play();
+        toggle.innerHTML = "🔊";
+      }
+      isPlaying = !isPlaying;
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+		setTimeout(function () {
+		  const splash = document.getElementById("splash");
+		  if (splash) {
+			splash.style.transition = "opacity 0.5s ease";
+			splash.style.opacity = "0";
+			setTimeout(() => splash.remove(), 600);
+		  }
+		  // Start music
+		  const music = document.getElementById('bgMusic');
+		  const toggle = document.getElementById('musicToggle');
+		  if (music) {
+			music.play().then(() => {
+			  toggle.innerHTML = "🔊";
+			}).catch(() => {
+			  toggle.innerHTML = "🔇";
+			});
+		  }
+
+		}, 3000); // Delay in ms
+
+      const music = document.getElementById('bgMusic');
+      const toggle = document.getElementById('musicToggle');
+
+      function tryPlayMusic() {
+        music.play().then(() => {
+          toggle.innerHTML = "🔊";
+          isPlaying = true;
+        }).catch(() => {
+          isPlaying = false;
+          toggle.innerHTML = "🔇";
+          document.body.addEventListener('click', () => {
+            music.play().then(() => {
+              isPlaying = true;
+              toggle.innerHTML = "🔊";
+            });
+          }, { once: true });
+        });
+      }
+  });
+  
+  
+   // Get URL Parameters
+  const urlParams = new URLSearchParams(window.location.search);
+  const gn = urlParams.get('gn');
+  const np = urlParams.get('np');
+
+  // Insert "gn" (Guest Name)
+  if (gn) {
+    document.getElementById('gn').textContent = decodeURIComponent(gn);
+  }
+
+  // Insert "np" (Number of Persons)
+  if (np) {
+    document.getElementById('np').textContent = decodeURIComponent(np);
+  }
+
+  // On page load: hide attendee dropdown if np = 1
+  window.onload = function () {
+    const attendeeWrapper = document.getElementById("attendeeWrapper");
+    if (np === "1") {
+      attendeeWrapper.style.display = "none";
+    }
+  };
+
+  // Toggle dropdowns based on attendance selection
+  function toggleAttendeeDropdown() {
+    const attendance = document.getElementById("attendance").value;
+    const attendeeWrapper = document.getElementById("attendeeWrapper");
+    const whoIsComingWrapper = document.getElementById("whoIsComingWrapper");
+
+    if (attendance === "yes") {
+      // Only show attendee selection if np > 1
+      if (np !== "1") {
+        attendeeWrapper.style.display = "block";
+      }
+    } else {
+      attendeeWrapper.style.display = "none";
+      whoIsComingWrapper.style.display = "none";
+    }
+  }
+
+  // If 1 attendee selected, show person selector
+  function handleSingleSelection() {
+    const selected = document.getElementById("numAttendees").value;
+    const whoIsComingWrapper = document.getElementById("whoIsComingWrapper");
+
+    if (selected === "1") {
+      whoIsComingWrapper.style.display = "block";
+    } else {
+      whoIsComingWrapper.style.display = "none";
+    }
+  }
+
+  // Submit RSVP
+  function submitRSVP() {
+    const name = document.getElementById("gn").innerText;
+    const npValue = document.getElementById("np").innerText;
+    let numAttendees = "";
+    let whoIsComing = "";
+
+    if (npValue === "1") {
+      // Automatically assign attendee
+      numAttendees = "1";
+      whoIsComing = name.includes("&") ? name.split("&")[0].trim() : name;
+    } else {
+      // Validate attendee dropdown
+      numAttendees = document.getElementById("numAttendees").value;
+      if (!numAttendees) {
+        alert("Please select the Number of Attendees.");
+        document.getElementById("numAttendees").focus();
+        return;
+      }
+
+      // If only 1 attending, ask who is it
+      if (numAttendees === "1") {
+        whoIsComing = document.getElementById("whoIsComing").value;
+        if (!whoIsComing) {
+          alert("Please select who is attending.");
+          document.getElementById("whoIsComing").focus();
+          return;
+        }
+      }
+    }
+
+    // Construct and show message
+    let alertMessage =
+      "Name: " + name +
+      "\nNumber of Persons (np): " + npValue +
+      "\nNumber of Attendees: " + numAttendees;
+
+    if (whoIsComing) {
+      alertMessage += "\nAttendee: " + whoIsComing;
+    }
+
+    alert(alertMessage);
+  }
+
+  // Optional: Character counter (if using message box)
+  const messageBox = document.getElementById('message');
+  const charCounter = document.getElementById('charCount');
+  if (messageBox && charCounter) {
+    messageBox.addEventListener('input', function () {
+      charCounter.textContent = `${this.value.length} / 120`;
+    });
+  }
+
+
+  function updateCountdown() {
+    const el = document.getElementById('countdownTimer');
+    const targetDate = new Date("2025-12-27T18:00:00");
+    const now = new Date();
+    const diff = targetDate - now;
+    if (diff <= 0) {
+      el.innerHTML = "It's the wedding day!";
+      return;
+    }
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+    const pad = n => n.toString().padStart(2, '0');
+    el.innerHTML = `${days}:${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
+  }
+
+  function updateMainCountdown() {
+    const el = document.getElementById('mainCountdown');
+    const targetDate = new Date("2025-12-27T18:00:00");
+    const now = new Date();
+    const diff = targetDate - now;
+    if (diff <= 0) {
+      el.innerHTML = "It's the wedding day!";
+      return;
+    }
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+    const pad = n => n.toString().padStart(2, '0');
+    el.innerHTML = `${days}:${pad(hours)}:${pad(minutes)}:<span style="color:#9B7F64">${pad(seconds)}</span>`;
+  }
+
+
+     
+    setInterval(updateCountdown, 1000);
+    setInterval(updateMainCountdown, 1000);
+	
+ 
+</script>
+
+</body>
+</html>

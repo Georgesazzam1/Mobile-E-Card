@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wedding Invitation</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html, body {
+      height: 100%;
+      overflow: hidden;
+      font-family: 'Georgia', serif;
+    }
+
+    #container {
+      width: 100%;
+      height: 100vh;
+      overflow-y: scroll;
+      scroll-snap-type: y mandatory;
+      scroll-behavior: smooth;
+    }
+
+    section {
+      height: 100vh;
+      scroll-snap-align: start;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-direction: column;
+      padding: 40px 20px;
+    }
+
+    .section-title {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      font-family: 'Georgia', serif;
+      letter-spacing: 1px;
+    }
+
+    /* Page 1 */
+    .page1 {
+      background: url('img/background.jpg') no-repeat center center;
+      background-size: cover;
+      color: white;
+      text-align: center;
+    }
+
+    .polaroid {
+      background: #f4f2ec;
+      padding: 12px;
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      width: 260px;
+    }
+
+    .polaroid img {
+      width: 70%;
+      border-radius: 4px;
+    }
+
+    .polaroid-text {
+      margin-top: 10px;
+      color: #222;
+    }
+
+    .title { font-weight: bold; font-size: 13px; }
+    .subtitle { font-style: italic; font-size: 12px; margin-top: 3px; }
+    .names {
+      font-family: 'Brush Script MT', cursive;
+      font-size: 22px;
+      margin-top: 4px;
+    }
+
+    .countdown-title {
+      font-family: 'Brush Script MT', cursive;
+      font-size: 22px;
+      margin-top: 28px;
+    }
+
+    .date-text {
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 8px;
+    }
+
+    .countdown {
+      font-size: 26px;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    .countdown-label {
+      font-size: 13px;
+      font-weight: normal;
+      letter-spacing: 1px;
+      margin-top: 4px;
+    }
+
+    /* Page 2 */
+    .page2 {
+      background-color: beige;
+      color: #800000;
+      text-align: center;
+    }
+
+    .calendar-month {
+      font-family: 'Brush Script MT', cursive;
+      font-size: 42px;
+      margin-bottom: 8px;
+    }
+
+    .calendar-details {
+      font-size: 14px;
+      color: #444;
+      line-height: 1.4;
+      font-style: italic;
+    }
+
+    .calendar-grid {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 5px;
+      max-width: 320px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .calendar-cell {
+      width: 40px;
+      height: 40px;
+      background: #f6eaea;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 14px;
+      color: #333;
+      border-radius: 4px;
+    }
+
+    .calendar-cell.empty {
+      background: transparent;
+    }
+
+    .calendar-cell.wedding {
+      border: 2px solid #800000;
+      border-radius: 50%;
+      font-weight: bold;
+      color: #800000;
+    }
+
+    /* Page 3 */
+    .page3 {
+      background: #fff;
+      color: #111;
+      text-align: center;
+    }
+
+    .wedding-text .top-text {
+      font-size: 20px;
+      line-height: 1.5;
+      font-weight: 300;
+    }
+
+    .wedding-text .italic {
+      font-style: italic;
+      color: #800000;
+      font-size: 25px;
+    }
+
+    .main-countdown {
+      font-size: 36px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      margin-top: 20px;
+    }
+
+    .labels {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      font-size: 12px;
+      margin-top: 8px;
+      text-transform: uppercase;
+      color: #333;
+    }
+
+    .seal-icon img {
+      width: 70px;
+      margin-top: 40px;
+    }
+
+    .details-text {
+      font-size: 18px;
+      letter-spacing: 2px;
+      margin-top: 8px;
+    }
+
+    /* Page 4 */
+    .page4 {
+      background-color: beige;
+    }
+
+    .page4-content {
+      max-width: 600px;
+      text-align: center;
+    }
+
+    .page4-section {
+      margin-bottom: 30px;
+    }
+
+    .page4-section h3 {
+      font-family: 'Brush Script MT', cursive;
+      font-size: 24px;
+      color: #800000;
+      margin-bottom: 10px;
+    }
+
+    .page4-section p {
+      font-size: 16px;
+      color: #333;
+      line-height: 1.5;
+      margin: 0 auto;
+      max-width: 400px;
+    }
+
+   .page4-footer {
+      margin-top: 40px;
+      font-size: 14px;
+      color: #555;
+      line-height: 1.4;
+    }
+
+    /* Page 5 */
+    .page5 {
+      background-color: beige;
+      justify-content: center;
+    }
+
+    .rsvp-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      color: #800000;
+      font-family: 'Georgia', serif;
+      max-width: 400px;
+    }
+
+    .rsvp-note {
+      font-family: 'Brush Script MT', cursive;
+      font-size: 24px;
+      margin-top: 10px;
+    }
+
+    .rsvp-envelope {
+      background-color: #800000;
+      width: 100%;
+      height: 130px;
+      border-radius: 10px;
+      position: relative;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      margin: 10px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .rsvp-text {
+      font-size: 36px;
+      color: white;
+      font-weight: bold;
+      font-family: 'Georgia', serif;
+      letter-spacing: 2px;
+    }
+
+    .rsvp-deadline {
+      font-size: 12px;
+      color: white;
+      margin-top: 8px;
+    }
+
+    .rsvp-instruction {
+      font-size: 14px;
+      color: #555;
+      margin-top: 20px;
+      line-height: 1.6;
+    }
+
+    .rsvp-love {
+      font-family: 'Brush Script MT', cursive;
+      font-size: 24px;
+      color: #800000;
+      margin-top: 10px;
+    }
+
+    .rsvp-photo {
+      margin-top: 20px;
+      position: relative;
+    }
+
+    .rsvp-photo img {
+      width: 140px;
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    /* Page 6 */
+    .page6 {
+      background-color: white;
+      justify-content: flex-start;
+      color: #800000;
+      text-align: center;
+    }
+
+    .rsvp-form {
+      width: 100%;
+      max-width: 360px;
+    }
+
+    .rsvp-card {
+      background: #fdfcfa;
+      border: 1px solid #eee;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .rsvp-card label {
+      font-size: 15px;
+      font-weight: 600;
+      color: #333;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .required {
+      color: #800000;
+    }
+
+    .rsvp-options {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .option {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 36px;
+      padding: 10px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      color: #ccc;
+      user-select: none;
+    }
+
+    .option.selected {
+      color: #800000;
+      font-weight: bold;
+      background-color: #f4e0e0;
+    }
+
+    .option-text {
+      margin-top: 6px;
+      font-size: 13px;
+      color: #444;
+      text-align: center;
+    }
+
+    .rsvp-card input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .guest-options label {
+      font-size: 14px;
+      display: block;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .other-option {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .other-option .other-text {
+      margin-top: 6px;
+      padding: 8px;
+      font-size: 13px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+
+    <!-- Page 1 -->
+    <section class="page1">
+      <div class="section-title">Welcome</div>
+      <div class="polaroid">
+        <img src="img/MainImage.png" alt="Omar and Michella">
+        <div class="polaroid-text">
+          <div class="title">YOU'RE CORDIALLY INVITED</div>
+          <div class="subtitle">to celebrate the joyous union</div>
+          <div class="names">Omar and Michella</div>
+        </div>
+      </div>
+      <div class="countdown-title">Countdown to our big day</div>
+      <div class="date-text">DECEMBER 27, 2025</div>
+      <div id="countdownTimer" class="countdown">Loading...</div>
+      <div class="countdown-label">days : hours : minutes : seconds</div>
+    </section>
+
+    <!-- Page 2 -->
+    <section class="page2">
+      <div class="section-title">Calendar</div>
+      <div class="calendar-month">December</div>
+      <div class="calendar-details">
+        Six o’clock afternoon<br>
+        Saydet L Nourieh<br>
+        North Lebanon, Hamat<br>
+      </div>
+      <div class="calendar-grid">
+        <!-- Only 27 is highlighted -->
+        <div class="calendar-cell empty"></div><div class="calendar-cell empty"></div><div class="calendar-cell">1</div><div class="calendar-cell">2</div><div class="calendar-cell">3</div><div class="calendar-cell">4</div><div class="calendar-cell">5</div>
+        <div class="calendar-cell">6</div><div class="calendar-cell">7</div><div class="calendar-cell">8</div><div class="calendar-cell">9</div><div class="calendar-cell">10</div><div class="calendar-cell">11</div><div class="calendar-cell">12</div>
+        <div class="calendar-cell">13</div><div class="calendar-cell">14</div><div class="calendar-cell">15</div><div class="calendar-cell">16</div><div class="calendar-cell">17</div><div class="calendar-cell">18</div><div class="calendar-cell">19</div>
+        <div class="calendar-cell">20</div><div class="calendar-cell">21</div><div class="calendar-cell">22</div><div class="calendar-cell">23</div><div class="calendar-cell">24</div><div class="calendar-cell">25</div><div class="calendar-cell">26</div>
+        <div class="calendar-cell wedding">27</div><div class="calendar-cell">28</div><div class="calendar-cell">29</div><div class="calendar-cell">30</div>
+      </div>
+    </section>
+
+    <!-- Page 3 -->
+    <section class="page3">
+      <div class="wedding-text">
+        <div class="top-text">Time<br>left until<span class="italic"> the</span><br>wedding</div>
+      </div>
+      <div id="mainCountdown" class="main-countdown">Loading...</div>
+      <div class="labels">
+        <span>Days</span><span>Hours</span><span>Minutes</span><span>Seconds</span>
+      </div>
+      <div class="seal-icon">
+        <img src="img/heartRed.png" alt="Seal" />
+      </div>
+      <div class="details-text">DETAILS</div>
+    </section>
+
+    <!-- Page 4 -->
+    <section class="page4">
+      <div class="section-title">DETAILS</div>
+      <div class="page4-content">
+        <div class="page4-section">
+          <h3>Wedding Ceremony</h3>
+          <p>
+            <b>Church:</b> Saydet L Nourieh Church<br>North Lebanon, Hamat<br>
+            <a href="https://maps.app.goo.gl/ZBtDEuT5iKyfoh729" target="_blank">View Map Location</a>
+          </p>
+        </div>
+
+        <div class="page4-section">
+          <h3>Wedding Reception</h3>
+          <p><b>Party:</b> Batrouniyat<br>
+            <a href="https://maps.app.goo.gl/yAX5tFdc4FBPkbGu5" target="_blank">View Map Location</a>
+          </p>
+        </div>
+
+        <div class="page4-footer">
+          For info & shuttles:<br>
+          <b>Michella:</b> 71143356<br>
+          <b>Omar:</b> 71143356
+        </div>
+      </div>
+    </section>
+
+    <!-- Page 5 -->
+    <section class="page5">
+      <div class="section-title">RSVP</div>
+      <p class="rsvp-note">please</p>
+      <div class="rsvp-envelope">
+        <span class="rsvp-text">RSVP</span>
+        <span class="rsvp-deadline">by December 05</span>
+      </div>
+      <p class="rsvp-instruction">and kindly let us know<br>if you can join us in this celebration</p>
+      <p class="rsvp-love">of love</p>
+      <div class="rsvp-photo">
+        <img src="img/MainImage.png" alt="Couple Photo" />
+      </div>
+    </section>
+
+    <!-- Page 6 -->
+    <section class="page6">
+      <div class="section-title">RSVP Form</div>
+      <form id="rsvpForm" class="rsvp-form">
+        <div class="rsvp-card">
+          <label>Will you be attending? <span class="required">*</span></label>
+          <div class="rsvp-options">
+            <div class="option" id="acceptOption" onclick="selectOption('accept')">❤️<div class="option-text">Accept<br><small>with pleasure</small></div></div>
+            <div class="option" id="declineOption" onclick="selectOption('decline')">❌<div class="option-text">Decline<br><small>with regret</small></div></div>
+          </div>
+        </div>
+
+        <div class="rsvp-card">
+          <label for="fullName">Full name <span class="required">*</span></label>
+          <input type="text" id="fullName" name="fullName" placeholder="Enter your name" required />
+        </div>
+
+        <div class="rsvp-card">
+          <label>How many guests will you bring (including yourself)?</label>
+          <div class="guest-options">
+            <label><input type="radio" name="guests" value="1"> 1</label>
+            <label><input type="radio" name="guests" value="2"> 2</label>
+            <label class="other-option">
+              <input type="radio" name="guests" value="Other"> Other
+              <input type="text" name="otherGuests" placeholder="Specify your option" class="other-text"/>
+            </label>
+          </div>
+        </div>
+      </form>
+    </section>
+
+  </div>
+
+  <script>
+    function updateCountdown() {
+      const el = document.getElementById('countdownTimer');
+      const targetDate = new Date("2025-12-27T18:00:00");
+      const now = new Date();
+      const diff = targetDate - now;
+      if (diff <= 0) {
+        el.innerHTML = "It's the wedding day!";
+        return;
+      }
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+      const pad = n => n.toString().padStart(2, '0');
+      el.innerHTML = `${days}:${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
+    }
+
+    function updateMainCountdown() {
+      const el = document.getElementById('mainCountdown');
+      const targetDate = new Date("2025-12-27T18:00:00");
+      const now = new Date();
+      const diff = targetDate - now;
+      if (diff <= 0) {
+        el.innerHTML = "It's the wedding day!";
+        return;
+      }
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+      const pad = n => n.toString().padStart(2, '0');
+      el.innerHTML = `${days}:${pad(hours)}:${pad(minutes)}:<span style="color:#a62639">${pad(seconds)}</span>`;
+    }
+
+    let selectedOption = null;
+    function selectOption(choice) {
+      const accept = document.getElementById("acceptOption");
+      const decline = document.getElementById("declineOption");
+      if (choice === "accept") {
+        accept.classList.add("selected");
+        decline.classList.remove("selected");
+        selectedOption = "Accept";
+      } else {
+        decline.classList.add("selected");
+        accept.classList.remove("selected");
+        selectedOption = "Decline";
+      }
+    }
+
+    setInterval(updateCountdown, 1000);
+    setInterval(updateMainCountdown, 1000);
+  </script>
+</body>
+</html>

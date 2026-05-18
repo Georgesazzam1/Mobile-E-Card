@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wedding Invitation</title>
+  <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
+  <style>
+  
+  
+     body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Georgia', serif;
+      background: white;
+      color: #333;
+      text-align: center;
+    }
+    .logo-section {
+      padding: 60px 20px 30px 20px;
+    }
+
+    .logo-section img {
+      width: 80px;
+      margin-bottom: 25px;
+    }
+
+    .verse {
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 1.6;
+      max-width: 500px;
+      margin: 0 auto;
+      color: #333;
+    }
+
+    .verse span.quote {
+      display: block;
+      font-size: 30px;
+      color: #000;
+      margin-bottom: 10px;
+    }
+
+    .verse span.ref {
+      display: block;
+      font-style: italic;
+      font-size: 14px;
+      color: #777;
+      margin-top: 10px;
+    }
+	
+	
+  
+  .full-width-section {
+	  width: 100vw;
+	  margin: 0;
+	  padding: 0;
+	  overflow: hidden;
+	}
+
+	.full-width-section svg {
+	  width: 100vw;
+	  height: auto;
+	  display: block;
+	  margin: 0;
+	  padding: 0;
+	}
+
+	.full-width-section img {
+		width: 100vw;
+		height: auto;
+		display: block;
+		margin: 0;
+		padding: 0;
+		object-fit: cover;
+		clip-path: polygon(/* Torn TOP */ 0% -1%, -12% 0%, 5% 4%, 27% 1%, 32% 3%, 34% 3%, 27% 2%, 27% 1%, 38% 3%, 54% 3%, 39% 16%, 55% -14%, 69% 6%, 65% 1%, 70% -3%, 75% 2%, 88% 4%, 71% 6%, 90% 1%, 94% 2%, 101% -1%, /* Bottom right to left (torn BOTTOM) */ 100% 90%, 89% 87%, 116% 91%, 104% 78%, 111% 111%, 107% 88%, 75% 94%, 103% 91%, 65% 92%, 42% 94%, 61% 80%, 62% 91%, 57% 94%, -57% 89%, 41% 95%, 54% 94%, 30% 93%, 19% 93%, 27% 86%, 27% 86%, 37% 77%, 42% 95%, -28% 91%, 8% 93%, -5% 92%, 0% 95%);
+	}
+
+
+   .seal-icon img {
+      width: 70px;
+      margin-top: 40px;
+    }
+
+    /* Music toggle button */
+    #musicToggle {
+      position: fixed;
+      bottom: 0px;
+      left: -10px;
+      color: white;
+      font-size: 20px;
+      padding: 10px 12px;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 9999;
+      transition: background 0.3s;
+    }
+
+  
+	
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html, body {
+      height: 100%;
+      overflow: hidden;
+      font-family: 'Georgia', serif;
+    }
+		
+	#container {
+	  width: 100%;
+	  height: 100vh;
+	  overflow-y: hidden; /* 👈 disable scroll at first */
+	  scroll-behavior: smooth;
+	}
+
+    section {
+      height: 100vh;
+      scroll-snap-align: start;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-direction: column;
+      padding: 2px 20px;
+    }
+
+    .section-title {
+      font-size: 30px;
+      font-weight: bold;
+      margin-bottom: 25px;
+      font-family: 'Georgia', serif;
+      letter-spacing: 1px;
+    }
+
+    /* Page 1 */
+    .page1 {
+      background: url('img/background.jpg') no-repeat center center;
+      background-size: cover;
+      color: white;
+      text-align: center;
+    }
+
+    .polaroid {
+      background: #f4f2ec;
+      padding: 12px;
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      width: 300px;
+    }
+
+    .polaroid img {
+      width: 70%;
+      border-radius: 4px;
+    }
+
+    .polaroid-text {
+      margin-top: 10px;
+      color: #222;
+    }
+
+    .title { font-weight: bold; font-size: 13px; }
+    .subtitle { font-style: italic; font-size: 12px; margin-top: 3px; }
+    .names {
+      font-family: 'Brush Script MT', cursive;
+      font-size: 22px;
+      margin-top: 4px;
+    }
+
+    .countdown-title {
+      font-family: 'Brush Script MT', cursive;
+      font-size: 35px;
+      margin-top: 33px;
+    }
+
+    .date-text {
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 8px;
+    }
+
+    .countdown {
+      font-size: 26px;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    .countdown-label {
+      font-size: 13px;
+      font-weight: normal;
+      letter-spacing: 1px;
+      margin-top: 4px;
+    }
+
+    /* Page 2 */
+    .page2 {
+      background-color: beige;
+      color: #800000;
+      text-align: center;
+    }
+
+    .calendar-month {
+      font-family: 'Brush Script MT', cursive;
+      font-size: 50px;
+      margin-bottom: -10px;
+    }
+
+    .calendar-details {
+      font-size: 14px;
+      color: #444;
+      line-height: 1.4;
+	  margin-left: 20px;
+      font-style: italic;
+    }
+
+    .calendar-grid {
+      margin-top: 100px;
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 5px;
+      max-width: 320px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .calendar-cell {
+      width: 40px;
+      height: 40px;
+      background: #f6eaea;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 14px;
+      color: #333;
+      border-radius: 4px;
+    }
+
+    .calendar-cell.empty {
+      background: transparent;
+    }
+
+    .calendar-cell.wedding {
+      border: 2px solid #800000;
+      border-radius: 50%;
+      font-weight: bold;
+      color: #800000;
+    }
+
+    /* Page 3 */
+    .page3 {
+      background-color: beige;
+      color: #111;
+      text-align: center;
+    }
+
+    .wedding-text .top-text {
+      font-size: 25px;
+      line-height: 1.5;
+      font-weight: 300;
+    }
+
+    .wedding-text .italic {
+      font-style: italic;
+      color: #800000;
+      font-size: 40px;
+    }
+
+    .main-countdown {
+      font-size: 36px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      margin-top: 20px;
+    }
+
+    .labels {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      font-size: 12px;
+      margin-top: 10px;
+      text-transform: uppercase;
+      color: #333;
+    }
+
+    .seal-icon img {
+      width: 70px;
+      margin-top: 40px;
+    }
+
+    .details-text {
+      font-size: 18px;
+      letter-spacing: 2px;
+      margin-top: 8px;
+    }
+
+  
+
+    .page4-content {
+      max-width: 600px;
+	  margin-bottom: 15px;
+      
+    }
+
+    .page4-section {
+      margin-bottom: 30px;
+    }
+
+    .page4-section h3 {
+      font-family: 'Brush Script MT', cursive;
+      font-size: 25px;
+      color: #800000;
+      margin-bottom: 7px;
+    }
+
+    .page4-section p {
+      font-size: 16px;
+      color: #333;
+      line-height: 1.5;
+      margin: 0 auto;
+      max-width: 400px;
+    }
+
+   .page4-footer {
+		margin-bottom: 30px;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-evenly;
+	}
+    /* Page 5 */
+    .page5 {
+      background-color: beige;
+      justify-content: center;
+    }
+
+    .rsvp-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      color: #800000;
+      font-family: 'Georgia', serif;
+      max-width: 400px;
+    }
+
+    .rsvp-note {
+      font-family: 'Brush Script MT', cursive;
+      font-size: 24px;
+      margin-top: 10px;
+    }
+
+    .rsvp-envelope {
+      background-color: #800000;
+      width: 100%;
+      height: 130px;
+      border-radius: 10px;
+      position: relative;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      margin: 10px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .rsvp-text {
+      font-size: 36px;
+      color: white;
+      font-weight: bold;
+      font-family: 'Georgia', serif;
+      letter-spacing: 2px;
+    }
+
+    .rsvp-deadline {
+      font-size: 12px;
+      color: white;
+      margin-top: 8px;
+    }
+
+    .rsvp-instruction {
+      font-size: 14px;
+      color: #555;
+      margin-top: 20px;
+      line-height: 1.6;
+    }
+
+    .rsvp-love {
+      font-family: 'Brush Script MT', cursive;
+      font-size: 24px;
+      color: #800000;
+      margin-top: 10px;
+    }
+
+    .rsvp-photo {
+      margin-top: 20px;
+      position: relative;
+    }
+
+    .rsvp-photo img {
+      width: 140px;
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    /* Page 6 */
+    .page6 {
+      background-color: beige;
+      justify-content: flex-start;
+      color: #800000;
+      text-align: center;
+    }
+
+    .rsvp-form {
+      width: 100%;
+      max-width: 360px;
+    }
+
+    .rsvp-card {
+      background: #fdfcfa;
+      border: 1px solid #eee;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .rsvp-card label {
+      font-size: 15px;
+      font-weight: 600;
+      color: #333;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .required {
+      color: #800000;
+    }
+
+    .rsvp-options {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .option {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 36px;
+      padding: 10px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      color: #ccc;
+      user-select: none;
+    }
+
+    .option.selected {
+      color: #800000;
+      font-weight: bold;
+      background-color: #f4e0e0;
+    }
+
+    .option-text {
+      margin-top: 6px;
+      font-size: 13px;
+      color: #444;
+      text-align: center;
+    }
+
+    .rsvp-form {
+      width: 100%;
+      max-width: 360px;
+    }
+
+    .rsvp-card {
+      background: #fdfcfa;
+      border: 1px solid #eee;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .rsvp-card label {
+      font-size: 15px;
+      font-weight: 600;
+      color: #333;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .required { color: #800000; }
+
+    .rsvp-options {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .option {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 36px;
+      padding: 10px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      color: #ccc;
+      user-select: none;
+    }
+
+    .option.selected {
+      color: #800000;
+      font-weight: bold;
+      background-color: #f4e0e0;
+    }
+
+    .option-text {
+      margin-top: 6px;
+      font-size: 13px;
+      color: #444;
+      text-align: center;
+    }
+
+    .rsvp-card input[type="text"],
+    .rsvp-card textarea {
+      width: 100%;
+      padding: 10px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .guest-options label {
+      font-size: 14px;
+      display: block;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .other-option {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .other-option .other-text {
+      margin-top: 6px;
+      padding: 8px;
+      font-size: 13px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+	
+	.page3 {
+	  display: flex;
+	  flex-direction: column;
+	  justify-content: space-between;
+	  padding: 40px 20px;
+	}
+
+	.page3-footer {
+	  margin-bottom: 30px;
+	  display: flex;
+	  flex-direction: column;
+	  align-items: center;
+	}
+	
+	.page4 {
+	  background-color: beige;
+	  display: flex;
+	  flex-direction: column;
+	  justify-content: space-between;
+	  padding: 30px 20px;
+	}
+
+	
+	.seal-icon-row {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-top: 30px;
+		padding: 0 100px;
+		flex-direction: row-reverse;
+		flex-wrap: nowrap;
+	}
+
+	.left-seal img,
+	.right-seal img {
+		display:none;
+		width: 80px!important;
+	}
+
+	.page4-image-wrapper {
+	  width: 100%;
+	  height: 75%;
+	  overflow: hidden;
+	  position: relative;
+	  margin-bottom: 20px;
+	}
+
+	.page4-image {
+	  width: 100%;
+	  border-bottom-left-radius: 100% 30px;
+	  border-bottom-right-radius: 100% 30px;
+	}
+	.wave {
+	  position: absolute;
+	  width: 100%;
+	  height: auto;
+	  left: 0;
+	  z-index: 1;
+	  pointer-events: none;
+	}
+
+	.wave-top {
+	  top: 0;
+	  transform: translateY(-100%);
+	}
+
+	.wave-bottom {
+	  bottom: 0;
+	  transform: translateY(100%);
+	}
+	
+	
+	
+	
+	.back {
+	  position: fixed;
+	  padding: 0;
+	  margin: 0;
+	  top: 0;
+	  left: 0;
+	  width: 100%;
+	  height: 100%;
+	  background: white;
+	  animation-name: backdiv;
+	  animation-duration: 1s;
+	  animation-iteration-count:infinite;
+  
+  
+	}
+ 
+  </style>
+</head>
+<body>
+	<div id="splash" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background: white; display: flex; align-items: center; justify-content: center; z-index: 10000;">
+  <dotlottie-wc 
+    src="https://lottie.host/00cf3f21-f9a1-42d4-9a1c-5aa54bc064da/2Q5cpy0Olq.lottie"
+    style="width: 100px; height: 100px"
+    speed="1" autoplay loop>
+  </dotlottie-wc>
+</div>
+  <div id="container">
+
+    <!-- Page 1 -->
+    <section class="page1">
+      <div class="section-title">Welcome</div>
+      <div class="polaroid">
+        <img src="img/MainImage.png" alt="Omar and Michella">
+        <div class="polaroid-text">
+          <div class="title">YOU'RE CORDIALLY INVITED</div>
+          <div class="subtitle">to celebrate the joyous union</div>
+          <div class="names">Omar and Michella</div>
+        </div>
+      </div>
+      <div class="countdown-title" style="display:none">Countdown to our big day</div>
+      <div class="date-text">DECEMBER 27, 2025</div>
+		<div style="margin-top: 40px;">
+		  <button onclick="startInvite()" style="padding: 12px 24px; font-size: 16px; border: 1px solid white; background: transparent; color: white; border-radius: 8px; cursor: pointer;">Tap to start</button>
+		</div>
+    </section>
+
+    <!-- Page 2 -->
+    <section class="page2">
+      <div class="section-title" style="font-size:40px">Calendar</div>
+      <div class="calendar-month">December</div>
+      <div class="calendar-details">
+        Six o’clock afternoon<br>
+        Saydet L Nourieh<br>
+        North Lebanon, Hamat<br>
+      </div>
+      <div class="calendar-grid">
+        <!-- Only 27 is highlighted -->
+        <div class="calendar-cell empty"></div><div class="calendar-cell empty"></div><div class="calendar-cell">1</div><div class="calendar-cell">2</div><div class="calendar-cell">3</div><div class="calendar-cell">4</div><div class="calendar-cell">5</div>
+        <div class="calendar-cell">6</div><div class="calendar-cell">7</div><div class="calendar-cell">8</div><div class="calendar-cell">9</div><div class="calendar-cell">10</div><div class="calendar-cell">11</div><div class="calendar-cell">12</div>
+        <div class="calendar-cell">13</div><div class="calendar-cell">14</div><div class="calendar-cell">15</div><div class="calendar-cell">16</div><div class="calendar-cell">17</div><div class="calendar-cell">18</div><div class="calendar-cell">19</div>
+        <div class="calendar-cell">20</div><div class="calendar-cell">21</div><div class="calendar-cell">22</div><div class="calendar-cell">23</div><div class="calendar-cell">24</div><div class="calendar-cell">25</div><div class="calendar-cell">26</div>
+        <div class="calendar-cell wedding">27</div><div class="calendar-cell">28</div><div class="calendar-cell">29</div><div class="calendar-cell">30</div>
+      </div>
+    </section>
+
+    <!-- Page 3 -->
+    <section class="page3">
+		<div class="full-width-section">
+		  <svg viewBox="0 0 1440 320" class="wave wave-top">
+			<path fill="beige" d="M0,64L48,74.7C96,85,192,107,288,117.3C384,128,480,128,576,112C672,96,768,64,864,64C960,64,1056,96,1152,117.3C1248,139,1344,149,1392,154.7L1440,160L1440,0L0,0Z"></path>
+		  </svg>
+
+		  <div class="full-width-section">
+			<img src="img/ImageRSVP.png" alt="Couple" class="main">
+
+		  </div>
+
+		  <svg viewBox="0 0 1440 320" class="wave wave-bottom">
+			<path fill="beige" d="M0,160L48,138.7C96,117,192,75,288,80C384,85,480,139,576,154.7C672,171,768,149,864,144C960,139,1056,149,1152,149.3C1248,149,1344,139,1392,133.3L1440,128L1440,320L0,320Z"></path>
+		  </svg>
+		</div>
+      <div class="wedding-text" style="display:none">
+        <div class="top-text">Time left until<span class="italic"><br />  the</span> wedding</div>
+      </div>
+      <div id="mainCountdown" class="main-countdown">Loading...</div>
+      <div class="labels">
+        <span>Days</span><span>Hours</span><span>Minutes</span><span>Seconds</span>
+      </div>
+	 <div class="seal-icon-row">
+	  <div class="left-seal">
+		<img src="img/rings.jpg" style="width:70px; margin-left:20px" alt="Seal Left" />
+	  </div>
+	  <div class="right-seal">
+		<img src="img/flowers.jpg" style="width:70px" alt="Seal Right" />
+	  </div>
+	   <div class="page3-footer">
+	  <div class="seal-icon">
+		<img src="img/heartRed.png" alt="Seal" />
+	  </div>
+	  <div class="details-text">DETAILS</div>
+	</div>
+	</div>
+
+
+    </section>
+
+    <!-- Page 4 -->
+    <section class="page4">
+	  
+    
+		<div class="full-width-section">
+		  <svg viewBox="0 0 1440 320" class="wave wave-top">
+			<path fill="beige" d="M0,64L48,74.7C96,85,192,107,288,117.3C384,128,480,128,576,112C672,96,768,64,864,64C960,64,1056,96,1152,117.3C1248,139,1344,149,1392,154.7L1440,160L1440,0L0,0Z"></path>
+		  </svg>
+
+		  <img src="img/ImageRSVP.png" alt="Couple" class="main">
+		  <svg viewBox="0 0 1440 320" class="wave wave-bottom">
+			<path fill="beige" d="M0,160L48,138.7C96,117,192,75,288,80C384,85,480,139,576,154.7C672,171,768,149,864,144C960,139,1056,149,1152,149.3C1248,149,1344,139,1392,133.3L1440,128L1440,320L0,320Z"></path>
+		  </svg>
+		</div>
+  
+      <div class="page4-content">
+        <div class="page4-section">
+		  <h3>Wedding Ceremony</h3>
+		  <p>
+			<b>Church:</b> Saydet El Nourieh Church<br>
+			Hamat, North Lebanon<br>
+			<a href="https://maps.app.goo.gl/AVRzXo2U1XasYzBt9" target="_blank" class="map-button">📍 View Location</a>
+		  </p>
+		</div>
+
+		<div class="page4-section">
+		  <h3>Wedding Reception</h3>
+		  <p><b>Venue:</b> Batrouniyat<br>
+		  Batroun, North Lebanon<br>
+			<a href="https://maps.app.goo.gl/yAX5tFdc4FBPkbGu5" target="_blank" class="map-button">📍 View Location</a>
+		  </p>
+		</div>
+      </div>
+	  		
+    </section>
+
+    <!-- Page 5 -->
+    <section class="page5">
+      <p class="rsvp-note">please</p>
+      <div class="rsvp-envelope">
+        <span class="rsvp-text">RSVP</span>
+        <span class="rsvp-deadline">by December 05</span>
+      </div>
+      <p class="rsvp-instruction">and kindly let us know<br>if you can join us in this celebration</p>
+      <p class="rsvp-love">of love</p>
+		<div class="full-width-section">
+		  <svg viewBox="0 0 1440 320" class="wave wave-top">
+			<path fill="beige" d="M0,64L48,74.7C96,85,192,107,288,117.3C384,128,480,128,576,112C672,96,768,64,864,64C960,64,1056,96,1152,117.3C1248,139,1344,149,1392,154.7L1440,160L1440,0L0,0Z"></path>
+		  </svg>
+
+			<img src="img/ImageRSVP.png" alt="Couple" class="main">
+
+		  <svg viewBox="0 0 1440 320" class="wave wave-bottom">
+			<path fill="beige" d="M0,160L48,138.7C96,117,192,75,288,80C384,85,480,139,576,154.7C672,171,768,149,864,144C960,139,1056,149,1152,149.3C1248,149,1344,139,1392,133.3L1440,128L1440,320L0,320Z"></path>
+		  </svg>
+		</div>
+    
+    </section>
+
+    <!-- Page 6 -->
+      <section class="page6">
+      <div class="section-title">RSVP Form</div>
+      <form id="rsvpForm" class="rsvp-form">
+        <div class="rsvp-card">
+          <label>Will you be attending? <span class="required">*</span></label>
+          <div class="rsvp-options">
+            <div class="option" id="acceptOption" onclick="selectOption('accept')">❤️<div class="option-text">Accept<br><small>with pleasure</small></div></div>
+            <div class="option" id="declineOption" onclick="selectOption('decline')">❌<div class="option-text">Decline<br><small>with regret</small></div></div>
+          </div>
+        </div>
+
+        <div class="rsvp-card">
+          <label for="fullName">Full name <span class="required">*</span></label>
+          <input type="text" id="fullName" name="fullName" placeholder="Enter your name" required />
+        </div>
+
+        <div class="rsvp-card">
+          <label>How many guests will you bring (including yourself)?</label>
+          <div class="guest-options">
+            <label><input type="radio" name="guests" value="1"> 1</label>
+            <label><input type="radio" name="guests" value="2"> 2</label>
+            <label class="other-option">
+              <input type="radio" name="guests" value="Other"> Other
+              <input type="text" name="otherGuests" placeholder="Specify your option" class="other-text"/>
+            </label>
+          </div>
+        </div>
+      </form>
+    </section>
+
+    <!-- Page 7 -->
+    <section class="page6">
+      <div class="rsvp-form">
+        <div class="rsvp-card">
+          <label for="comments">Comments</label>
+          <textarea id="comments" name="comments" placeholder="Your answer" rows="3"></textarea>
+        </div>
+        <div style="text-align:center; margin-top: 10px;">
+          <button type="button" onclick="submitRSVP()" style="background-color: #222; color: white; padding: 10px 24px; font-size: 16px; border-radius: 8px; border: none; cursor: pointer;">
+            Submit
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </div>
+ <audio id="bgMusic" autoplay loop>
+    <source src="music/Sia - Snowman.mp3" type="audio/mpeg" />
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Music Toggle Button -->
+  <div id="musicToggle" onclick="toggleMusic()" title="Toggle music">🔊</div>
+
+<!-- Inside your <body>, at the end before </body> -->
+<script>
+  function updateCountdown() {
+    const el = document.getElementById('countdownTimer');
+    const targetDate = new Date("2025-12-27T18:00:00");
+    const now = new Date();
+    const diff = targetDate - now;
+    if (diff <= 0) {
+      el.innerHTML = "It's the wedding day!";
+      return;
+    }
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+    const pad = n => n.toString().padStart(2, '0');
+    el.innerHTML = `${days}:${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
+  }
+
+  function updateMainCountdown() {
+    const el = document.getElementById('mainCountdown');
+    const targetDate = new Date("2025-12-27T18:00:00");
+    const now = new Date();
+    const diff = targetDate - now;
+    if (diff <= 0) {
+      el.innerHTML = "It's the wedding day!";
+      return;
+    }
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+    const pad = n => n.toString().padStart(2, '0');
+    el.innerHTML = `${days}:${pad(hours)}:${pad(minutes)}:<span style="color:#a62639">${pad(seconds)}</span>`;
+  }
+
+
+     
+    setInterval(updateCountdown, 1000);
+    setInterval(updateMainCountdown, 1000);
+	
+  let selectedOption = null;
+  function selectOption(choice) {
+    const accept = document.getElementById("acceptOption");
+    const decline = document.getElementById("declineOption");
+    if (choice === "accept") {
+      accept.classList.add("selected");
+      decline.classList.remove("selected");
+      selectedOption = "Accept";
+    } else {
+      decline.classList.add("selected");
+      accept.classList.remove("selected");
+      selectedOption = "Decline";
+    }
+  }
+
+function startInvite() {
+  const container = document.getElementById('container');
+  const music = document.getElementById('bgMusic');
+  const toggle = document.getElementById('musicToggle');
+
+  // Enable scroll
+  container.style.overflowY = 'scroll';
+
+  // Scroll to next section
+  container.scrollTo({
+    top: window.innerHeight,
+    behavior: 'smooth'
+  });
+
+  // Try to start the music
+  music.play().then(() => {
+    isPlaying = true;
+    toggle.innerHTML = "🔊";
+  }).catch(() => {
+    isPlaying = false;
+    toggle.innerHTML = "🔇";
+  });
+}
+
+  function submitRSVP() {
+    const name = document.getElementById("fullName").value.trim();
+    if (!name) {
+      alert("Please enter your full name.");
+      return;
+    }
+
+    if (!selectedOption) {
+      alert("Please select Accept or Decline.");
+      return;
+    }
+
+    let guests = "";
+    const guestOptions = document.getElementsByName("guests");
+    for (const opt of guestOptions) {
+      if (opt.checked) {
+        guests = opt.value;
+        break;
+      }
+    }
+
+    const otherInput = document.querySelector("input[name='otherGuests']");
+    if (guests === "Other" && otherInput && otherInput.value.trim()) {
+      guests = otherInput.value.trim();
+    }
+
+    const comments = document.getElementById("comments").value.trim();
+    let summary = `Full Name: ${name}\nAttendance: ${selectedOption}\nGuests: ${guests}`;
+    if (comments) {
+      summary += `\nComments: ${comments}`;
+    }
+
+    alert(summary);
+  }
+
+    let isPlaying = true;
+
+    function toggleMusic() {
+      const music = document.getElementById('bgMusic');
+      const toggle = document.getElementById('musicToggle');
+      if (isPlaying) {
+        music.pause();
+        toggle.innerHTML = "🔇";
+      } else {
+        music.play();
+        toggle.innerHTML = "🔊";
+      }
+      isPlaying = !isPlaying;
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+		
+		setTimeout(function () {
+		  const splash = document.getElementById("splash");
+		  if (splash) {
+			splash.style.transition = "opacity 0.5s ease";
+			splash.style.opacity = "0";
+			setTimeout(() => splash.remove(), 600);
+		  }
+		  // Start music
+		  const music = document.getElementById('bgMusic');
+		  const toggle = document.getElementById('musicToggle');
+		  if (music) {
+			music.play().then(() => {
+			  toggle.innerHTML = "🔊";
+			}).catch(() => {
+			  toggle.innerHTML = "🔇";
+			});
+		  }
+
+		}, 3000); // Delay in ms
+
+      const music = document.getElementById('bgMusic');
+      const toggle = document.getElementById('musicToggle');
+
+      function tryPlayMusic() {
+        music.play().then(() => {
+          toggle.innerHTML = "🔊";
+          isPlaying = true;
+        }).catch(() => {
+          isPlaying = false;
+          toggle.innerHTML = "🔇";
+          document.body.addEventListener('click', () => {
+            music.play().then(() => {
+              isPlaying = true;
+              toggle.innerHTML = "🔊";
+            });
+          }, { once: true });
+        });
+      }
+  });
+  
+</script>
+
+</body>
+</html>
