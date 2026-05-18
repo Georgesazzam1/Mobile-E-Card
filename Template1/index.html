@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Charbel and Stephanie - Wedding</title>
+	<meta property="og:title" content="Charbel & Stephanie Wedding">
+	<meta property="og:description" content="Join us in celebrating our special day on July 12, 2026">
+	<meta property="og:image" content="https://charbelandstephwedding.netlify.app/img/1.jpeg">
+	<meta property="og:image:secure_url" content="https://charbelandstephwedding.netlify.app/img/1.jpeg">
+	<meta property="og:image:type" content="image/jpeg">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+	<meta property="og:url" content="https://charbelandstephwedding.netlify.app/">
+	<meta property="og:type" content="website">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Charbel & Stephanie Wedding">
+	<meta name="twitter:description" content="Join us in celebrating our special day on July 12, 2026">
+	<meta name="twitter:image" content="https://charbelandstephwedding.netlify.app/img/1.jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans:wght@400;500;600&family=Petit+Formal+Script&display=swap" rel="stylesheet">
+  <style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%;overflow:hidden;background:#000;font-family:Arial,sans-serif}
+#canvas{position:fixed;inset:0;pointer-events:none;z-index:0}
+/* SPLASH */
+.splash{position:fixed;inset:0;background:#000;color:#fff;display:flex;flex-direction:column;justify-content:center;align-items:center;z-index:9999;transition:opacity 1s ease}
+.splash.hidden{opacity:0;pointer-events:none}
+.splash .title{font-size:6vw;letter-spacing:1.5vw}
+.splash .date{font-size:3.5vw;letter-spacing:1vw;color:#aaa;margin-top:10px}
+.loader{margin-top:40px;width:50px;height:50px;border:3px solid rgba(212,175,55,0.2);border-top:3px solid white;border-radius:50%;animation:spin 1.2s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+/* BOOK STAGE */
+.book-stage{position:fixed;inset:0;perspective:1300px;perspective-origin:50% 50%;z-index:1}
+/* SLIDES */
+.slide{position:absolute;inset:0;width:100%;height:100%;display:none;flex-direction:column;justify-content:center;align-items:center;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.slide.active{display:flex}
+.slide-bg{position:absolute;inset:0;background-size:cover;background-position:center;background-repeat:no-repeat}
+.slide-bg::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,0.45)}
+/* FLIP ANIMATIONS */
+@keyframes exitFwd{from{transform:rotateY(0deg)}to{transform:rotateY(-90deg)}}
+@keyframes enterFwd{from{transform:rotateY(90deg)}to{transform:rotateY(0deg)}}
+@keyframes exitBwd{from{transform:rotateY(0deg)}to{transform:rotateY(90deg)}}
+@keyframes enterBwd{from{transform:rotateY(-90deg)}to{transform:rotateY(0deg)}}
+.exit-fwd{animation:exitFwd 0.55s ease-in forwards;transform-origin:left center;display:flex!important;flex-direction:column;justify-content:center;align-items:center}
+.enter-fwd{animation:enterFwd 0.55s ease-out forwards;transform-origin:left center}
+.exit-bwd{animation:exitBwd 0.55s ease-in forwards;transform-origin:right center;display:flex!important;flex-direction:column;justify-content:center;align-items:center}
+.enter-bwd{animation:enterBwd 0.55s ease-out forwards;transform-origin:right center}
+/* SLIDE BACKGROUNDS */
+#slide-1 .slide-bg{background-image:url('img/1.jpeg')}
+#slide-1 .slide-bg::after{background:rgba(0,0,0,0.55)}
+#slide-2 .slide-bg{background-image:url('img/2.jpeg')}
+#slide-2 .slide-bg::after{background:rgba(0,0,0,0.35)}
+#slide-3 .slide-bg{background-image:url('img/3.jpeg')}
+#slide-3 .slide-bg::after{background:rgba(0,0,0,0.35)}
+#slide-4 .slide-bg{background-image:url('img/5.jpeg')}
+#slide-4 .slide-bg::after{background:rgba(0,0,0,0.35)}
+#slide-5 .slide-bg{background-image:url('img/6.jpeg')}
+#slide-5 .slide-bg::after{background:rgba(0,0,0,0.35)}
+#slide-6 .slide-bg{background-image:url('img/7.jpeg')}
+#slide-6 .slide-bg::after{background:rgba(0,0,0,0.35)}
+#slide-7 .slide-bg{background-image:url('img/8.jpeg')}
+#slide-7 .slide-bg::after{background:rgba(0,0,0,0.35)}
+
+/* ── SLIDE 1 MIRROR ── */
+.start-wrapper{
+  position:relative;z-index:5;display:flex;flex-direction:column;
+  align-items:center;gap:0;
+}
+.mirror-photo{
+  width:min(72vw,320px);
+  border-radius:50%;
+  border:2px solid rgba(212,175,55,0.5);
+  box-shadow:0 0 40px rgba(0,0,0,0.6);
+  display:block;
+  object-fit:cover;
+  aspect-ratio:1/1;
+  cursor:pointer;
+  transition:transform 0.3s ease, box-shadow 0.3s ease;
+}
+.mirror-photo:hover{
+  transform:scale(1.03);
+  box-shadow:0 0 50px rgba(212,175,55,0.35);
+}
+.start-names{
+  font-family:'Great Vibes',cursive;
+  font-size:clamp(16px,4vw,22px);
+  color:rgba(212,175,55,0.85);
+  letter-spacing:2px;
+  margin-top:clamp(10px,3vw,16px);
+}
+.start-label{
+  margin-right:30px;
+  font-family:'Great Vibes',cursive;
+  font-size:clamp(52px,13vw,80px);
+  color:#fff;cursor:pointer;
+  text-shadow:0 0 20px rgba(212,175,55,0.7),0 2px 8px rgba(0,0,0,0.5);
+  transition:all 0.3s ease;
+  letter-spacing:2px;
+  margin-top:clamp(4px,1.5vw,10px);
+  line-height:1;
+}
+.start-label:hover{color:#d4af37;transform:scale(1.06);}
+
+/* ── TAP GUIDE HAND ── */
+.tap-guide{
+  position:absolute;
+  z-index:20;
+  pointer-events:none;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:6px;
+  /* positioned over the mirror image — JS will fine-tune */
+  top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  animation:guideFloat 0.9s ease-in-out infinite alternate,
+            guideFadeOut 0.6s ease forwards 5s;
+}
+.tap-guide.hidden{display:none}
+
+/* ripple under the hand */
+.tap-ripple{
+  width:54px;height:54px;border-radius:50%;
+  border:2px solid rgba(212,175,55,0.7);
+  animation:ripplePulse 0.9s ease-in-out infinite alternate;
+}
+
+/* hand SVG */
+.tap-hand{
+  width:44px;height:44px;
+  filter:drop-shadow(0 2px 6px rgba(0,0,0,0.7));
+}
+
+/* hint text */
+.tap-hint{
+  font-family:'Open Sans',sans-serif;
+  font-size:11px;letter-spacing:3px;
+  color:rgba(255,255,255,0.75);
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+
+@keyframes guideFloat{
+  from{transform:translate(-50%,-50%) translateY(0px)}
+  to{transform:translate(-50%,-50%) translateY(-10px)}
+}
+@keyframes ripplePulse{
+  from{transform:scale(0.85);opacity:0.5}
+  to{transform:scale(1.15);opacity:1}
+}
+@keyframes guideFadeOut{
+  from{opacity:1}
+  to{opacity:0;display:none}
+}
+
+/* CARD */
+.card{position:relative;z-index:5;background:rgba(20,30,50,0.6);padding:6vw;text-align:center;color:#fff;width:90%;max-width:620px}
+.gold-lbl{letter-spacing:5px;font-size:clamp(10px,2vw,13px);color:#d4af37;margin-bottom:12px}
+.heading-xl{font-size:clamp(18px,3.5vw,28px);letter-spacing:4px;font-weight:300}
+.heading-date{font-size:clamp(24px,5vw,42px);letter-spacing:5px;margin:16px 0}
+.italic-text{font-style:italic;color:#ddd;font-size:clamp(13px,2.5vw,16px);line-height:1.8;margin-top:14px}
+.small-text{font-size:clamp(10px,2vw,13px);letter-spacing:2px;color:#ccc;margin-top:14px;line-height:2}
+.verse-ref{margin-top:14px;font-size:clamp(11px,2.5vw,14px);letter-spacing:3px;color:rgba(255,255,255,0.65)}
+.time-display{font-style:italic;color:#ddd;font-size:clamp(18px,3vw,26px);margin:8px 0 16px}
+.map-link{display:inline-block;margin-top:4px;padding:10px 28px;border:1px solid rgba(255,255,255,0.35);border-radius:3px;color:#fff;text-decoration:none;font-size:14px;letter-spacing:3px;transition:all 0.3s}
+.map-link:hover{border-color:#d4af37;color:#d4af37;background:rgba(212,175,55,0.1)}
+/* RSVP */
+.rsvp-box{position:relative;z-index:5;width:92%;max-width:400px;max-height:82vh;overflow-y:auto;padding:clamp(16px,4vw,30px);background:rgba(20,30,50,0.65);backdrop-filter:blur(10px);color:#fff;text-align:center}
+.rsvp-box::-webkit-scrollbar{width:3px}
+.rsvp-box::-webkit-scrollbar-thumb{background:#d4af37;border-radius:2px}
+.toggle-row{display:flex;gap:10px;justify-content:center;margin:14px 0}
+.btn-toggle{padding:9px 20px;border:2px solid white;background:transparent;color:white;font-size:clamp(12px,3vw,14px);cursor:pointer;border-radius:5px;transition:all 0.25s}
+.btn-toggle.sel-attending{background:#1b5e20;border-color:#2e7d32}
+.btn-toggle.sel-declining{background:#7f0000;border-color:#c62828}
+.input-field{width:100%;padding:10px;margin:6px 0;border:1px solid rgba(255,255,255,0.28);background:rgba(255,255,255,0.09);color:#fff;text-align:center;border-radius:5px;font-size:clamp(12px,3vw,14px)}
+.input-field::placeholder{color:rgba(255,255,255,0.45)}
+.input-field:focus{outline:none;border-color:#d4af37}
+select.input-field{cursor:pointer}
+select.input-field option{background:#0c1428;color:#fff}
+.guest-lbl{display:block;font-size:11px;letter-spacing:2px;color:rgba(255,255,255,0.5);text-align:left;margin:10px 0 3px}
+.confirm-btn{width:100%;padding:11px;margin-top:10px;background:transparent;border:2px solid white;color:white;font-size:clamp(12px,3vw,14px);cursor:pointer;border-radius:5px;transition:all 0.3s;letter-spacing:2px}
+.confirm-btn:hover{background:#fff;color:#000}
+.hidden{display:none!important}
+.success-msg{font-family:'Petit Formal Script',cursive;font-size:clamp(18px,4.5vw,24px);color:#fff;line-height:1.9;padding:20px 0 6px}
+.error-msg{color:#ff6b6b;font-size:12px;margin-top:8px}
+.loading-msg{color:rgba(255,255,255,0.6);font-size:12px;padding:12px 0}
+/* NAV */
+.nav-bar{position:fixed;bottom:clamp(16px,5vh,36px);left:0;right:0;display:none;justify-content:space-between;align-items:center;padding:0 clamp(16px,5vw,48px);z-index:20}
+.nav-btn{background:none;border:none;cursor:pointer;font-family:Arial,sans-serif;font-size:clamp(8px,2vw,9px);letter-spacing:4px;color:rgba(255,255,255,0.7);padding:8px 14px;border-radius:8px;transition:all 0.2s}
+.nav-btn:hover{background:rgba(255,255,255,0.08);color:#fff}
+.nav-btn.invisible{visibility:hidden;pointer-events:none}
+/* DOTS */
+.page-dots{position:fixed;bottom:clamp(5px,1.5vh,10px);left:50%;transform:translateX(-50%);display:none;gap:7px;z-index:20}
+.dot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,0.25);transition:all 0.3s}
+.dot.active{background:#fff;transform:scale(1.5)}
+/* MUSIC */
+.music-btn{position:fixed;top:clamp(14px,3vh,22px);right:clamp(14px,3vw,22px);width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,0.3);background:rgba(0,0,0,0.25);backdrop-filter:blur(4px);color:rgba(255,255,255,0.8);font-size:14px;cursor:pointer;z-index:50;display:none;align-items:center;justify-content:center;transition:all 0.3s}
+.music-btn:hover{background:rgba(0,0,0,0.65);color:#fff}
+  </style>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+<audio id="weddingMusic" src="WeddingInvitation.mp3" loop preload="auto">
+  Your browser does not support the audio element.
+</audio>
+<button class="music-btn" id="musicBtn" onclick="toggleMusic()">&#10074;&#10074;</button>
+
+<!-- SPLASH -->
+<div class="splash" id="splash">
+  <div class="title">CHARBEL &amp; STEPHANIE</div>
+  <div class="date">JULY 12, 2026</div>
+  <div class="loader"></div>
+</div>
+
+<!-- BOOK STAGE -->
+<div class="book-stage">
+
+  <!-- SLIDE 1 - START -->
+  <div class="slide active" id="slide-1">
+    <div class="slide-bg"></div>
+    <div class="start-wrapper" id="startWrapper">
+
+      <img src="img/4.jpeg" class="mirror-photo" id="mirrorPhoto"
+           alt="Charbel & Stephanie" onclick="startJourney()">
+
+      <!-- TAP GUIDE — floats over the photo, auto-hides after 3s -->
+      <div class="tap-guide" id="tapGuide">
+        <div class="tap-ripple"></div>
+        <svg class="tap-hand" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- finger/hand pointing down to tap -->
+          <path d="M32 4 C28 4 25 7 25 11 L25 32 C22 30 18 31 16 34 C14 37 16 41 19 43
+                   L28 52 C30 55 34 57 38 57 L44 57 C50 57 55 52 55 46 L55 28
+                   C55 25 53 22 50 22 C49 22 48 22 47 23
+                   C46 21 44 19 42 19 C41 19 40 19 39 20
+                   C38 18 36 17 34 17 C33 17 32 17 32 17
+                   L32 11 C32 7 35 4 32 4 Z"
+                fill="white" opacity="0.95"/>
+        </svg>
+        <span class="tap-hint">Tap to open</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SLIDE 2 - ARE GETTING MARRIED -->
+  <div class="slide" id="slide-2">
+    <div class="slide-bg"></div>
+    <div class="card">
+      <div style="letter-spacing:4px;font-size:clamp(16px,4vw,25px);color:#d4af37;">ARE GETTING MARRIED</div>
+      <div class="italic-text">"Therefore what God has joined together,<br>let no one separate."</div>
+      <div class="verse-ref">MARK 10:9</div>
+    </div>
+  </div>
+
+  <!-- SLIDE 3 - SAVE THE DATE -->
+  <div class="slide" id="slide-3">
+    <div class="slide-bg"></div>
+    <div class="card">
+      <div class="gold-lbl">SAVE THE DATE</div>
+      <div class="heading-date">12 &bull; 07 &bull; 2026</div>
+      <div class="italic-text">Join us as we begin our forever</div>
+      <div class="small-text">THE AZZAM &amp; NEAIMEH FAMILIES<br>REQUEST THE HONOR OF YOUR PRESENCE<br>TO CELEBRATE THE WEDDING</div>
+    </div>
+  </div>
+
+  <!-- SLIDE 4 - CEREMONY -->
+  <div class="slide" id="slide-4">
+    <div class="slide-bg"></div>
+    <div class="card">
+      <div class="gold-lbl">Ceremony</div>
+      <div class="heading-xl">Saint Dimitrios Church</div>
+      <div class="time-display">6:00 PM</div>
+      <a class="map-link" href="https://maps.app.goo.gl/jPfxasSUeW4GnEhZ7" target="_blank">Location Map</a>
+    </div>
+  </div>
+
+  <!-- SLIDE 5 - RECEPTION -->
+  <div class="slide" id="slide-5">
+    <div class="slide-bg"></div>
+    <div class="card">
+      <div class="gold-lbl">Reception</div>
+      <div class="heading-xl">Villa Olea</div>
+      <div class="time-display">8:30 PM</div>
+      <a class="map-link" href="https://maps.app.goo.gl/zWpt8L6zxCQcyPLV9" target="_blank">Location Map</a>
+    </div>
+  </div>
+
+  <!-- SLIDE 6 - GIFT REGISTRY -->
+  <div class="slide" id="slide-6">
+    <div class="slide-bg"></div>
+    <div class="card" style="text-align:center">
+      <h5 style="color:white;letter-spacing:3px;font-size:clamp(18px,4vw,25px);margin-bottom:28px">Gift Registry</h5>
+      <p style="font-style:italic;font-family:'Open Sans',sans-serif;color:#ddd;font-size:clamp(13px,3vw,15px);line-height:1.9">
+        Your presence at our wedding is<br>the best present we could ask for.<br><br>
+        For those interested, our wedding registry<br>can be found at:
+      </p>
+      <p style="font-style:italic;font-weight:bold;font-family:'Open Sans',sans-serif;margin-top:16px;font-size:clamp(13px,3vw,16px)">
+        <b>OMT Or Whish:<br>Acc# ######</b>
+      </p>
+    </div>
+  </div>
+
+  <!-- SLIDE 7 - RSVP -->
+  <div class="slide" id="slide-7">
+    <div class="slide-bg"></div>
+    <div class="rsvp-box">
+      <h5 style="letter-spacing:3px;font-size:clamp(18px,4vw,25px);margin-bottom:6px">Be Our Guest</h5>
+      <p style="font-size:clamp(12px,3vw,14px);color:#ccc;margin-bottom:6px">Please reply by <strong style="color:#fff">July 01, 2026</strong></p>
+      <p style="font-size:clamp(12px,3vw,14px);color:#ccc;margin-bottom:0">Number of Invitees: <strong id="invite-count" style="color:#fff">1</strong></p>
+      <div class="toggle-row">
+        <button class="btn-toggle sel-attending" id="attendingBtn" onclick="setMode(true)">Attending</button>
+        <button class="btn-toggle" id="notAttendingBtn" onclick="setMode(false)">Not Attending</button>
+      </div>
+      <form id="rsvpForm" onsubmit="sendData(event)">
+        <div id="attendingSection">
+          <label class="guest-lbl">Number of Guests Attending</label>
+          <select id="guestCount" class="input-field" onchange="renderGuests(parseInt(this.value))"></select>
+          <div id="guestList"></div>
+        </div>
+        <div id="notAttendingSection" class="hidden">
+          <label class="guest-lbl">Your Name</label>
+          <input type="text" id="nameInput" class="input-field" placeholder="Enter your name">
+        </div>
+        <p class="error-msg" id="errorMsg"></p>
+        <p class="loading-msg hidden" id="loadingMsg">Submitting your response, please wait...</p>
+        <button type="submit" class="confirm-btn" id="confirmBtn">Click here to confirm</button>
+      </form>
+      <p id="successAttending" class="success-msg hidden">Thank you for your Confirmation!<br>See You There :)</p>
+      <p id="successDecline" class="success-msg hidden">Thank you for letting us know!<br>We'll miss you and hope to see you another time :(</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- NAV BUTTONS -->
+<div class="nav-bar" id="navBar">
+  <button class="nav-btn invisible" id="prevBtn" onclick="goToPrev()">&#8592; BACK</button>
+  <button class="nav-btn" id="nextBtn" onclick="goToNext()">NEXT &#8594;</button>
+</div>
+
+<!-- PAGE DOTS -->
+<div class="page-dots" id="pageDots"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+var GOOGLE_SCRIPT='https://script.google.com/macros/s/AKfycbwwKRT-ATXMg4XfC5EAbqI0hyxXR3MnI3xAg7B8ulPuX4Zu2y984NKOfNRkNZi7vXqwQA/exec';
+var TOTAL=7;
+var np=Math.max(1,parseInt(new URLSearchParams(window.location.search).get('np'))||1);
+var current=1,animating=false,musicOn=false,attending=true;
+
+document.addEventListener('DOMContentLoaded',function(){
+  emailjs.init({publicKey:'ZuIm88yOAUB2EsbjL'});
+
+  /* ── position tap guide over the mirror photo ── */
+  setTimeout(function(){
+    var guide = document.getElementById('tapGuide');
+    var photo = document.getElementById('mirrorPhoto');
+    if(guide && photo){
+      var r = photo.getBoundingClientRect();
+      /* centre the guide on the photo */
+      guide.style.top  = (r.top  + r.height / 2) + 'px';
+      guide.style.left = (r.left + r.width  / 2) + 'px';
+      guide.style.position = 'fixed';
+    }
+    /* hide after 3 s (animation also fades it, this cleans up the DOM) */
+    setTimeout(function(){
+      if(guide) guide.classList.add('hidden');
+    }, 3600);
+  }, 2200); /* wait for splash to finish */
+
+  setTimeout(function(){document.getElementById('splash').classList.add('hidden');},2000);
+  var dotsEl=document.getElementById('pageDots');
+  for(var i=2;i<=TOTAL;i++){var d=document.createElement('div');d.className='dot';d.id='dot-'+i;dotsEl.appendChild(d);}
+  buildSelect(np);
+  renderGuests(np);
+  setMode(true);
+});
+
+function startJourney(){
+  /* hide guide immediately on tap */
+  var guide=document.getElementById('tapGuide');
+  if(guide) guide.classList.add('hidden');
+  var audio=document.getElementById('weddingMusic');
+  audio.play().catch(function(){});
+  musicOn=true;
+  document.getElementById('musicBtn').style.display='flex';
+  document.getElementById('navBar').style.display='flex';
+  document.getElementById('pageDots').style.display='flex';
+  flip(2,'next');
+}
+function goToNext(){if(!animating&&current<TOTAL)flip(current+1,'next');}
+function goToPrev(){if(!animating&&current>2)flip(current-1,'prev');}
+function flip(target,dir){
+  if(animating||target===current)return;
+  animating=true;
+  var fromEl=document.getElementById('slide-'+current);
+  var toEl=document.getElementById('slide-'+target);
+  var exitCls=dir==='next'?'exit-fwd':'exit-bwd';
+  fromEl.style.zIndex='3';
+  toEl.style.zIndex='1';
+  toEl.style.display='flex';
+  toEl.style.flexDirection='column';
+  toEl.style.justifyContent='center';
+  toEl.style.alignItems='center';
+  fromEl.classList.add(exitCls);
+  function onExit(){
+    fromEl.removeEventListener('animationend',onExit);
+    fromEl.classList.remove('active',exitCls);
+    fromEl.style.display='none';
+    fromEl.style.zIndex='';
+    toEl.style.zIndex='';
+    toEl.classList.add('active');
+    current=target;animating=false;updateNav();
+  }
+  fromEl.addEventListener('animationend',onExit);
+}
+function updateNav(){
+  document.getElementById('prevBtn').classList.toggle('invisible',current<=2);
+  document.getElementById('nextBtn').classList.toggle('invisible',current>=TOTAL);
+  document.querySelectorAll('.dot').forEach(function(d){d.classList.toggle('active',d.id==='dot-'+current);});
+}
+function toggleMusic(){
+  var audio=document.getElementById('weddingMusic');
+  var btn=document.getElementById('musicBtn');
+  if(musicOn){audio.pause();btn.innerHTML='&#9654;';musicOn=false;}
+  else{audio.play().catch(function(){});btn.innerHTML='&#10074;&#10074;';musicOn=true;}
+}
+function buildSelect(max){
+  var sel=document.getElementById('guestCount');
+  sel.innerHTML='';
+  for(var i=1;i<=max;i++){
+    var opt=document.createElement('option');
+    opt.value=opt.textContent=i;
+    sel.appendChild(opt);
+  }
+  sel.value=String(max);
+}
+function renderGuests(count){
+  var list=document.getElementById('guestList');
+  list.innerHTML='';
+  document.getElementById('invite-count').textContent=count;
+  for(var i=1;i<=count;i++){
+    var lbl=document.createElement('label');lbl.className='guest-lbl';lbl.textContent='Guest #'+i;
+    var inp=document.createElement('input');inp.type='text';inp.id='guest'+i;inp.className='input-field';inp.placeholder='Enter guest name';
+    list.appendChild(lbl);list.appendChild(inp);
+  }
+}
+function setMode(isAtt){
+  attending=isAtt;
+  document.getElementById('attendingBtn').className='btn-toggle'+(isAtt?' sel-attending':'');
+  document.getElementById('notAttendingBtn').className='btn-toggle'+(!isAtt?' sel-declining':'');
+  document.getElementById('attendingSection').classList.toggle('hidden',!isAtt);
+  document.getElementById('notAttendingSection').classList.toggle('hidden',isAtt);
+  document.getElementById('errorMsg').textContent='';
+  if(isAtt)document.getElementById('nameInput').value='';
+  else document.querySelectorAll('#guestList input').forEach(function(i){i.value='';});
+}
+function sendData(event){
+  event.preventDefault();
+  var errEl=document.getElementById('errorMsg');errEl.textContent='';
+  var fd=new URLSearchParams();
+  if(attending){
+    var count=parseInt(document.getElementById('guestCount').value);
+    var names=[];
+    for(var i=1;i<=count;i++){
+      var inp=document.getElementById('guest'+i);
+      if(!inp||!inp.value.trim()){errEl.textContent='Please enter a name for Guest #'+i;return;}
+      names.push(inp.value.trim());
+    }
+    fd.set('Username', names[0]);
+    fd.set('NumberOfInvitees', count);
+    names.forEach(function(n,i){
+      fd.set('Invitee'+(i+1)+'_username', n);
+    });
+  } else {
+    var name=document.getElementById('nameInput').value.trim();
+    if(!name){errEl.textContent='Please enter your name.';return;}
+    fd.set('Username', name+' (Not Attend)');
+    fd.set('NumberOfInvitees', 0);
+  }
+  var btn=document.getElementById('confirmBtn');
+  var load=document.getElementById('loadingMsg');
+  var form=document.getElementById('rsvpForm');
+  btn.style.display='none';
+  load.classList.remove('hidden');
+  var iframe = document.createElement('iframe');
+  iframe.name = 'gs_iframe';
+  iframe.style.display = 'none';
+  document.body.appendChild(iframe);
+  var hiddenForm = document.createElement('form');
+  hiddenForm.method = 'POST';
+  hiddenForm.action = GOOGLE_SCRIPT;
+  hiddenForm.target = 'gs_iframe';
+  fd.forEach(function(val, key){
+    var inp = document.createElement('input');
+    inp.type = 'hidden';
+    inp.name = key;
+    inp.value = val;
+    hiddenForm.appendChild(inp);
+  });
+  document.body.appendChild(hiddenForm);
+  iframe.onload = function(){
+    load.classList.add('hidden');
+    form.style.display = 'none';
+    document.getElementById(attending?'successAttending':'successDecline').classList.remove('hidden');
+    document.body.removeChild(hiddenForm);
+    document.body.removeChild(iframe);
+  };
+  hiddenForm.submit();
+}
+/* SWIPE (touch) + KEYBOARD */
+(function(){
+  var sx=0,sy=0;
+  document.addEventListener('touchstart',function(e){
+    if(e.target.closest&&e.target.closest('.rsvp-box'))return;
+    sx=e.touches[0].clientX; sy=e.touches[0].clientY;
+  },{passive:true});
+  document.addEventListener('touchend',function(e){
+    if(current===1)return;
+    var dx=e.changedTouches[0].clientX-sx;
+    var dy=e.changedTouches[0].clientY-sy;
+    if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)){
+      if(dx<0)goToNext(); else goToPrev();
+    }
+  },{passive:true});
+  document.addEventListener('keydown',function(e){
+    if(e.key==='ArrowRight')goToNext();
+    if(e.key==='ArrowLeft') goToPrev();
+  });
+})();
+/* FIREWORKS */
+(function(){
+  var canvas=document.getElementById('canvas');
+  var ctx=canvas.getContext('2d');
+  var particles=[];
+  function resize(){canvas.width=window.innerWidth;canvas.height=window.innerHeight;}
+  resize();window.addEventListener('resize',resize);
+  function P(x,y,color){
+    this.w=this.h=Math.random()*4+1;this.x=x-this.w/2;this.y=y-this.h/2;
+    this.vx=(Math.random()-0.5)*10;this.vy=(Math.random()-0.5)*10;
+    this.alpha=Math.random()*0.5+0.5;this.color=color;
+  }
+  P.prototype={gravity:0.05,
+    move:function(){this.x+=this.vx;this.vy+=this.gravity;this.y+=this.vy;this.alpha-=0.01;
+      return this.x>-this.w&&this.x<canvas.width&&this.y<canvas.height&&this.alpha>0;},
+    draw:function(c){c.save();c.beginPath();c.arc(this.x,this.y,this.w,0,Math.PI*2);
+      c.fillStyle=this.color;c.globalAlpha=this.alpha;c.fill();c.restore();}
+  };
+  function burst(){
+    var x=Math.random()*(canvas.width-200)+100,y=Math.random()*(canvas.height-200)+100;
+    var c='rgb('+(~~(Math.random()*200+55))+',' +(~~(Math.random()*200+55))+','+(~~(Math.random()*200+55))+')';
+    var n=~~(Math.random()*50+100);
+    for(var i=0;i<n;i++)particles.push(new P(x,y,c));
+  }
+  (function loop(){
+    ctx.globalCompositeOperation='source-over';ctx.fillStyle='rgba(0,0,0,0.2)';ctx.fillRect(0,0,canvas.width,canvas.height);
+    ctx.globalCompositeOperation='lighter';
+    if(particles.length<500&&Math.random()<0.04)burst();
+    particles=particles.filter(function(p){var a=p.move();if(a)p.draw(ctx);return a;});
+    requestAnimationFrame(loop);
+  })();
+})();
+</script>
+</body>
+</html>

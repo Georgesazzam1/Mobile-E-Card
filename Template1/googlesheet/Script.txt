@@ -1,0 +1,31 @@
+function doPost(e) {
+  const lock = LockService.getScriptLock();
+  lock.tryLock(10000);
+  try {
+    const doc = SpreadsheetApp.openById('1GiSFMn6Nq8xR8r_jPc8XxJXw2BYPopkRpVndMLUiMPw');
+    const sheet = doc.getSheetByName('Wedding');
+    const nextRow = sheet.getLastRow() + 1;
+    const username   = (e.parameter.Username || '').trim() || 'No Name';
+    const numGuests  = parseInt(e.parameter.NumberOfInvitees) || 0;
+    const isAttending = numGuests > 0;
+    const timestamp  = Utilities.formatDate(new Date(), Session.getScriptTimeZone(), "yyyy-MM-dd HH:mm:ss");
+    const newRow = [];
+    newRow.push(numGuests);
+    newRow.push(username);
+    for (let i = 1; i <= 5; i++) {
+      newRow.push(e.parameter['Invitee' + i + '_username'] || '');
+    }
+    newRow.push(timestamp);
+    newRow.push(isAttending ? 'Attending' : 'Not Attend');
+    sheet.getRange(nextRow, 1, 1, newRow.length).setValues([newRow]);
+    return ContentService
+      .createTextOutput(JSON.stringify({ result: 'success', row: nextRow }))
+      .setMimeType(ContentService.MimeType.JSON);
+  } catch (error) {
+    return ContentService
+      .createTextOutput(JSON.stringify({ result: 'error', error: error.message }))
+      .setMimeType(ContentService.MimeType.JSON);
+  } finally {
+    lock.releaseLock();
+  }
+}
